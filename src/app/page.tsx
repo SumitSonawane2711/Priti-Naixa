@@ -1,103 +1,282 @@
+"use client";
+import Container from "./components/container";
+import Carousel from "./components/carousel";
+import SectionCarousel from "./components/section_carousel";
+import { SectionHeading } from "./components/section-heading";
+import { Testimonials } from "./components/testimonials";
+import { useState } from "react";
+import { cars as carsNew } from "@/app/data/new_cars";
+import { cars as usedCars } from "@/app/data/old_cars";
+import CustomerReviews from "./components/CustomerReviews";
+import Link from "next/link";
+import { SubHeading } from "./components/subheading";
+import Accordion from "./components/accordians";
+import { IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+export default function Home() {
+
+ 
+
+  const faqs = [
+    {
+      id: 1,
+      question: "What are the benefits of owning a JK Tyre franchise?",
+      answer:
+        "Owning a JK Tyre franchise allows you to sell a trusted brand’s products, access marketing support, and earn consistent revenue through vehicle maintenance and tyre replacement services.",
+    },
+    {
+      id: 2,
+      question: "How much investment is required to start a tyre franchise?",
+      answer:
+        "The investment varies depending on location and setup size, typically ranging from ₹10–25 lakhs including equipment and branding.",
+    },
+    {
+      id: 3,
+      question: "Do I get exclusive area rights with my dealership?",
+      answer:
+        "Yes, most JK Tyre franchise partners are given exclusive area rights to ensure fair competition and sustainable business growth.",
+    },
+  ];
+
+
+  const NewModelTab = [
+    "Maruti Suzuki", "Hyundai"
+  ]
+
+  const UsedModelTab = [
+    "Maruti Suzuki", "Hyundai"
+  ]
+
+  const [newfeatured, setNewFeatured] = useState(NewModelTab[0]);
+  const [usedfeatured, setUsedFeatured] = useState(UsedModelTab[0]);
+
+  const FilteredNewCars = carsNew.filter(car => car.brand === newfeatured);
+  const FilteredUsedCars = usedCars.filter(car => car.brand === usedfeatured);
+
+  const slides = [
+    {
+      title: "Find Your Perfect T-Permit Car",
+      description:
+        "Discover a wide range of brand-new T-Permit vehicles designed for performance, comfort, and long journeys. Get the best finance and exchange offers today!",
+      buttonText: "Explore New Cars",
+      buttonLink: "/new_cars",
+      imageUrl: "/banner5.png",
+      altText: "Brand New T-Permit Cars",
+    },
+    {
+      title: "Certified Used T-Permit Cars",
+      description:
+        "Buy trusted, inspected, and affordable used T-Permit cars with complete service history. Enjoy high mileage, reliability, and great resale value.",
+      buttonText: "Browse Used Cars",
+      buttonLink: "/old_cars",
+      imageUrl:
+        "/banner4.png",
+      altText: "Used T-Permit Cars for Sale",
+    },
+    // {
+    //   title: "Premium Tyres & Accessories",
+    //   description:
+    //     "Choose from a wide range of branded tyres and high-quality car accessories. Perfect fit, long-lasting performance, and expert installation guaranteed.",
+    //   buttonText: "Shop Tyres & Parts",
+    //   buttonLink: "/tyres-accessories",
+    //   imageUrl:
+    //     "/banner2.jpg",
+    //   altText: "Car Tyres and Accessories",
+    // },
+    {
+      title: "Expert Post-Sale Services",
+      description:
+        "Keep your T-Permit car running like new with our expert servicing, genuine parts, and 24x7 roadside assistance. Hassle-free maintenance guaranteed.",
+      buttonText: "Book a Service",
+      buttonLink: "/services",
+      imageUrl: "/banner7.png",
+      altText: "T-Permit Car Servicing and Maintenance",
+    },
+  ];
+
+
+  const NewCards = FilteredNewCars.map(car => ({
+    id: car.id,
+    title: `${car.name} ${car.year}  ${car.model}`,
+    description: ` ${car.transmission} | ${car.fuelType}`,
+    imageUrl: car.images[0],
+    altText: `${car.year} ${car.model} image`,
+    detailLink: `/new_cars/${car.id}`,
+  }));
+
+  const UsedCards = FilteredUsedCars.map(car => ({
+    id: car.id,
+    title: `${car.name} ${car.year}  ${car.model}`,
+    description: ` ${car.transmission} | ${car.fuelType}`,
+    imageUrl: car.images[0],
+    altText: `${car.year} ${car.model} image`,
+    detailLink: `/new_cars/${car.id}`,
+  }));
+
+  return (
+    <main>
+
+      <Carousel slides={slides} autoPlay={true} autoPlayInterval={8000} />
+
+      <Container className=" max-w-7xl flex-col items-center justify-center  ">
+
+
+        <section className="w-full mt-12 border-1 bg-white  border-gray-300 rounded-xl pending-4 shadow-lg">
+
+          <div className="pl-4 pt-4 border-b border-gray-300 ">
+            <SectionHeading delay={0.5}>
+              New Collections
+            </SectionHeading>
+            {/* <SubHeading className="text-lg ">
+              Explore our latest offerings with detailed insights.
+            </SubHeading> */}
+            <div className="flex overflow-x-auto  w-max ">
+              {NewModelTab.map((tab, index) => (
+                <button
+                  key={index}
+                  onClick={() => setNewFeatured(tab)}
+                  className={`px-4 py-2 mx-1 font-bold cursor-pointer sm:font-semibold text-sm whitespace-nowrap transition-colors duration-300 ${newfeatured === tab
+                    ? ' border-b-3 border-accent text-gray-900 '
+                    : 'hover:bg-gray-300 '
+                    }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+
+
+          <SectionCarousel
+            cards={NewCards}
+            autoPlay={false} // Set to true if desired
+            slidesToShow={{ mobile: 1.3, tablet: 2.2, desktop: 3.3 }}
+            showArrows={true}
+            showDots={true}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <div className='text-start px-10 py-4 border-t border-gray-300'>
+            <Link href={'/new_cars'} className="text-sm font-bold  flex  md:font-semibold text-slate-900 hover:text-accent w-max">
+              Explore More <IconChevronRight />
+            </Link>
+          </div>
+        </section>
+
+        <section className="w-full mt-12 border-1 bg-white  border-gray-300 rounded-xl pending-4 shadow-lg">
+
+          <div className="pl-4 pt-4 border-b border-gray-300 ">
+            <SectionHeading delay={0.5}>
+              Used Collections
+            </SectionHeading>
+            {/* <SubHeading className="text-lg ">
+              Explore our latest offerings with detailed insights.
+            </SubHeading> */}
+            <div className="flex overflow-x-auto pb-0 w-max ">
+              {UsedModelTab.map((tab, index) => (
+                <button
+                  key={index}
+                  onClick={() => setUsedFeatured(tab)}
+                  className={`px-4 py-2 mx-1 font-bold cursor-pointer sm:font-semibold text-sm whitespace-nowrap transition-colors duration-300 ${usedfeatured === tab
+                    ? ' border-b-3 border-accent text-gray-900 '
+                    : 'hover:bg-gray-300 '
+                    }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+
+
+          <SectionCarousel
+            cards={UsedCards}
+            autoPlay={false} // Set to true if desired
+            slidesToShow={{ mobile: 1.3, tablet: 2.2, desktop: 3.3 }}
+            showArrows={true}
+            showDots={true}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <div className='text-start px-10 py-4 border-t border-gray-300'>
+            <Link href={'/old_cars'} className="text-sm font-bold  flex  md:font-semibold text-slate-900 hover:text-accent w-max">
+              Explore More <IconChevronRight />
+            </Link>
+          </div>
+        </section>
+
+        <section className="mt-12">
+          <div className=" mx-auto flex flex-col lg:flex-row items-center ">
+
+            {/* Left: Image */}
+            <div className=" md:rounded-lg rounded-t-lg overflow-hidden shadow-md">
+              <Image
+                width = {500}
+                height = {600}
+                src="https://imgs.search.brave.com/DpNP5A-WyKan_eoEhe9ZcOHVpq_jnDw2LfsaLvzGwAM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9qa3R5/cmUtbWVkaWEtMS5z/My5hcC1zb3V0aC0x/LmFtYXpvbmF3cy5j/b20vSktfU21hcnRf/dHlyZV8yX1gxX0NU/Q18wMV9iZDg5NDRk/ZTU3LmpwZz9mb3Jt/YXQ9YXV0byZ3aWR0/aD02NDAmcXVhbGl0/eT03NQ" // replace with actual image path
+                alt="JK Tyre Franchise"
+                className="w-full  md:rounded-lg rounded-t-lg"
+              />
+            </div>
+
+            {/* Right: Content */}
+            <div className="w-full lg:w-1/2 px-6 bg-gradient-to-b from-gray-800  to-sky-800 shadow-xl rounded-b-2xl md:rounded-b-none md:rounded-br-2xl py-10 lg:text-left"
+            >
+              <SectionHeading className="text-white ">
+                JK Tyre Franchise Verified Dealer
+              </SectionHeading>
+              <SubHeading className="text-gray-200 ">
+                Partner with one of India’s most trusted tyre brands — <strong>JK Tyre</strong>.
+                As an authorized verified dealer, we provide complete support for franchise setup,
+                branding, and operational excellence to ensure smooth business performance.
+              </SubHeading>
+              <SubHeading className="text-gray-200 mb-6">
+                With JK Tyre’s nationwide presence and high customer trust, you can expand your
+                automotive business with guaranteed quality, genuine products, and strong after-sales support.
+              </SubHeading>
+              <Link href={'/contact'} className="px-6 py-3 bg-yellow-500 text-slate-900 cursor-pointer font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300">
+                Enquire Now
+              </Link>
+            </div>
+
+          </div>
+        </section>
+
+        <section className="w-full mt-12 py-10  border border-gray-200 rounded-xl pending-4 shadow-lg">
+          <div className="px-8">
+            <SectionHeading >Customer Reviews</SectionHeading>
+            <SubHeading className="">See what our happy customers say about us.</SubHeading>
+          </div>
+
+          <CustomerReviews
+            reviews={[
+              { id: '1', title: 'Happy delivery Prince T&T. Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/4H4V5lpr_w0' },
+              { id: '2', title: 'Happy delivery M.A. T&T. Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/4JODQoh2Mxs' },
+              { id: '3', title: 'Very happy driver. Priti Naixa fleet. WagonR,Dzire,Aura,Ertiga all cars available', videoUrl: 'https://www.youtube.com/embed/85c56aF3s68' },
+              { id: '4', title: 'Happy delivery at Priti naixa. 2023 modal WagonR. Silver colour. Very happy Costmor', videoUrl: 'https://www.youtube.com/embed/N_rU8qLE36M' },
+              { id: '5', title: 'Happy delivery Rudra T&T . Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/S-gQ2F3yJqI' },
+              { id: '6', title: 'Happy delivery at Priti Naixa . Taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/H4iCrljn8fU' },
+            ]}
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <div className="px-8">
+            <Testimonials />
+          </div>
+        </section>
+
+        <section className="py-12 ">
+          <div className="text-center mb-8">
+            <SectionHeading >
+              Frequently Asked Questions
+            </SectionHeading>
+            <div className=" flex justify-center">
+              <SubHeading >
+              Find answers to common queries about our tyre franchise opportunities.
+            </SubHeading>
+            </div>
+            
+          </div>
+
+          <Accordion items={faqs} />
+        </section>
+      </Container>
+    </main>
   );
 }
