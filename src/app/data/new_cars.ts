@@ -314,4 +314,5 @@ export const cars: Car[] = [
     description:
       "The Hyundai Aura SX CNG offers style and economy, combining a premium sedan feel with exceptional fuel efficiency for daily rides.",
   },
+  
 ];

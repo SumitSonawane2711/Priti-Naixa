@@ -13,8 +13,25 @@ import SectionCarousel from "@/app/components/section_carousel";
 import { SectionHeading } from "@/app/components/section-heading";
 import { SubHeading } from "@/app/components/subheading";
 
-const CarDetailPage = () => {
-  const { id } = useParams();
+export async function generateStaticParams() {
+  const cars = [
+    { id: "maruti-wagonr-tourh3" },
+    { id: "maruti-wagonr-lxi" },
+    { id: "maruti-wagonr-vxi" },
+    { id: "maruti-ertiga-tourm" },
+    { id: "maruti-ertiga-vxi" },
+    { id: "maruti-ertiga-zxi" },
+    { id: "maruti-dzire-tours" },
+    { id: "hyundai-aura-e" },
+    { id: "hyundai-aura-s" },
+    { id: "hyundai-aura-sx" }
+  ];
+
+  return cars.map((car) => ({ id: car.id }));
+}
+
+const CarDetailPage = ({params} : {params: {id:string}}) => {
+  const { id } = params;
   const car = carsNew.find((car) => car.id === id);
   const [activeImage, setActiveImage] = useState(car?.images?.[0]);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
