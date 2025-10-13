@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // output: 'export',
   /* config options here */
   images: {
+    unoptimized: true, // Disable Next.js Image Optimization
     domains: [
       "imgs.search.brave.com",
       "upload.wikimedia.org",
