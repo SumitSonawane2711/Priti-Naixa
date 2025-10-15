@@ -150,7 +150,7 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
                 </div>
 
                 {/* Content */}
-                <div className="p-4 flex flex-col h-36 justify-between">
+                <div className="p-4 flex flex-col h-35 justify-between">
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1 line-clamp-2 group-hover:text-blue-600 transition-colors">
                       {card.title}
@@ -161,8 +161,8 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
                   </div>
                   <Link
                     href={card.detailLink}
-                    className="absolute inset-0 z-10"
-                  ></Link>
+                    className="text-sm z-10 bg-yellow-500 w-max py-1 px-4 font-semibold shadow-md text-black"
+                  >See Details</Link>
                 </div>
               </div>
             </div>
