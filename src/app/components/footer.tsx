@@ -42,7 +42,7 @@ export const Footer = () => {
               height={40}
               className="rounded-full"
             />
-            <h3 className="text-xl font-semibold text-white">Priti Naixa Motors</h3>
+            <h3 className="text-xl font-semibold text-white">Priti Naixa Pvt. Ltd.</h3>
           </div>
           <p className="text-sm text-neutral-400 mb-4 leading-relaxed">
             Trusted automotive <span className="text-accent">T-permit</span> dealership offering new cars & used cars, finance solutions,
@@ -94,18 +94,21 @@ export const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Showroom Address</h4>
           <p className="text-sm text-neutral-400 mb-3">
-            Shop 1 & 2, Tarique Galaxy, Plot-181, <br />Sector-2, Taloja, Panvel, Raigarh,(MH), Maharashtra 410208, India.
+            <strong>Reg. Office : </strong>  <br /> Shop 1 & 2, Tarique Galaxy, Plot-181, <br />Sector-2, Taloja, Panvel, Raigarh,(MH), Maharashtra 410208, India.
+          </p>
+          <p className="text-sm text-neutral-400 mb-3">
+           <strong>2nd Branh : </strong> <br />Shop No. 5/6, Abu Bakar, Empire, Surgey No. 97, <br />Shilphata Mahape Road, Opp. AK Compound, Shilphata, Mumbra - 400612, India.
           </p>
           <p className="text-sm text-neutral-400">
-            <strong>Phone:</strong> +91 98765 43210 <br />
-            <strong>Email:</strong> info@pritinaixa.com
+            <strong>Phone:</strong> +91 91367 71018 <br />
+            <strong>Email:</strong> pritinaixa68@gmail.com
           </p>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-neutral-800 py-4 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} Priti Naixa. All rights reserved.
+        © {new Date().getFullYear()} Priti Naixa Pvt. Ldt. All rights reserved.
         | Designed with ❤️ by <span className="text-red-600 font-bold"><Link href={'https://www.sinss.in'}>SINSS</Link></span>
       </div>
     </footer>

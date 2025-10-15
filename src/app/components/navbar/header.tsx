@@ -57,7 +57,7 @@ export const Header = () => {
                 alt="Logo"
                 priority
               />
-              Priti Naixa
+              Priti Naixa Pvt. Ltd.
             </Link>
 
             {/* Desktop Nav */}
@@ -109,7 +109,7 @@ export const Header = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 transition-colors"
-              href="tel:+9136771018"
+              href="tel:+919136771018"
             >
               <IconPhone size={24} /> <span className="hidden md:inline">+91 9136771018</span>
             </motion.a>
@@ -117,9 +117,9 @@ export const Header = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 transition-colors"
-              href="mailto:pritinaixa@gmail.com"
+              href="mailto:pritinaixa68@gmail.com"
             >
-              <IconMail size={24} /> <span className="hidden md:inline">pritinaixa@gmail.com</span>
+              <IconMail size={24} /> <span className="hidden md:inline">pritinaixa68@gmail.com</span>
             </motion.a>
           </div>
 

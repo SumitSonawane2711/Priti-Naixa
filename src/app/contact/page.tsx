@@ -23,7 +23,7 @@ const Contact = () => {
               <IconPhone className="text-indigo-600" size={24} />
               <div>
                 <p className="text-sm text-gray-500">Phone</p>
-                <p className="font-semibold text-gray-800">+91 82374 9348</p>
+                <p className="font-semibold text-gray-800">+91 91367 71018</p>
               </div>
             </motion.div>
             {/* Vertical line */}
@@ -35,7 +35,7 @@ const Contact = () => {
               <IconMail className="text-indigo-600" size={24} />
               <div>
                 <p className="text-sm text-gray-500">Email</p>
-                <p className="font-semibold text-gray-800">pritineixa@gmail.com</p>
+                <p className="font-semibold text-gray-800">pritinaixa68@gmail.com</p>
               </div>
             </motion.div>
           </div>

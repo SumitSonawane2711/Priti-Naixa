@@ -24,9 +24,9 @@ export const Navbar = () => {
         <motion.a
           whileHover={{ scale: 1.05 }}
           className="flex items-center gap-2 transition-colors"
-          href="tel:+91823749348"
+          href="tel:+919136771018"
         >
-          <IconPhone size={18} /> +91 82374 9348
+          <IconPhone size={18} /> +91 9136771018
         </motion.a>
 
         <motion.a
