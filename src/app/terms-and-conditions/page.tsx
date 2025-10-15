@@ -151,8 +151,8 @@ const TermsAndConditions = () => {
               📍 <strong>Showroom:</strong> Priti Naixa Motors, Near XYZ
               Highway, Nashik, Maharashtra, India
             </li>
-            <li>📞 <strong>Phone:</strong> +91 98765 43210</li>
-            <li>✉️ <strong>Email:</strong> info@pritinaixa.com</li>
+            <li>📞 <strong>Phone:</strong> +91 91367 71018</li>
+            <li>✉️ <strong>Email:</strong> pritinaixa68@gmail.com</li>
           </ul>
         </section>
 
