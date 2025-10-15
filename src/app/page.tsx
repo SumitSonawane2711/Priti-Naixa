@@ -13,11 +13,12 @@ import { SubHeading } from "./components/subheading";
 import Accordion from "./components/accordians";
 import { IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
+import Head from "next/head";
 
 
 export default function Home() {
 
- 
+
 
   const faqs = [
     {
@@ -99,7 +100,7 @@ export default function Home() {
 
   const NewCards = FilteredNewCars.map(car => ({
     id: car.id,
-    title: `${car.name} ${car.year}  ${car.model}`,
+    title: `${car.name} ${car.year} |  ${car.brand}`,
     description: ` ${car.transmission} | ${car.fuelType}`,
     imageUrl: car.images[0],
     altText: `${car.year} ${car.model} image`,
@@ -108,7 +109,7 @@ export default function Home() {
 
   const UsedCards = FilteredUsedCars.map(car => ({
     id: car.id,
-    title: `${car.name} ${car.year}  ${car.model}`,
+    title: `${car.name} ${car.year} | ${car.brand}`,
     description: ` ${car.transmission} | ${car.fuelType}`,
     imageUrl: car.images[0],
     altText: `${car.year} ${car.model} image`,
@@ -116,167 +117,180 @@ export default function Home() {
   }));
 
   return (
-    <main>
-
-      <Carousel slides={slides} autoPlay={true} autoPlayInterval={8000} />
-
-      <Container className=" max-w-7xl flex-col items-center justify-center  ">
-
-
-        <section className="w-full mt-12 border-1 bg-white  border-gray-300 rounded-xl pending-4 shadow-lg">
-
-          <div className="pl-4 pt-4 border-b border-gray-300 ">
-            <SectionHeading delay={0.5}>
-              New Collections
-            </SectionHeading>
-            {/* <SubHeading className="text-lg ">
-              Explore our latest offerings with detailed insights.
-            </SubHeading> */}
-            <div className="flex overflow-x-auto  w-max ">
-              {NewModelTab.map((tab, index) => (
-                <button
-                  key={index}
-                  onClick={() => setNewFeatured(tab)}
-                  className={`px-4 py-2 mx-1 font-bold cursor-pointer sm:font-semibold text-sm whitespace-nowrap transition-colors duration-300 ${newfeatured === tab
-                    ? ' border-b-3 border-accent text-gray-900 '
-                    : 'hover:bg-gray-300 '
-                    }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
-
-
-          <SectionCarousel
-            cards={NewCards}
-            autoPlay={false} // Set to true if desired
-            slidesToShow={{ mobile: 1.3, tablet: 2.2, desktop: 3.3 }}
-            showArrows={true}
-            showDots={true}
+    <>
+      <Head>
+        {slides.map((slide, i) => (
+          <link
+            key={i}
+            rel="preload"
+            as="image"
+            href={slide.imageUrl}
+            fetchPriority="high"
           />
-          <div className='text-start px-10 py-4 border-t border-gray-300'>
-            <Link href={'/new_cars'} className="text-sm font-bold  flex  md:font-semibold text-slate-900 hover:text-accent w-max">
-              Explore More <IconChevronRight />
-            </Link>
-          </div>
-        </section>
+        ))}
+      </Head>
+      <main>
 
-        <section className="w-full mt-12 border-1 bg-white  border-gray-300 rounded-xl pending-4 shadow-lg">
+        <Carousel slides={slides} autoPlay={true} autoPlayInterval={8000} />
 
-          <div className="pl-4 pt-4 border-b border-gray-300 ">
-            <SectionHeading delay={0.5}>
-              Used Collections
-            </SectionHeading>
-            {/* <SubHeading className="text-lg ">
-              Explore our latest offerings with detailed insights.
-            </SubHeading> */}
-            <div className="flex overflow-x-auto pb-0 w-max ">
-              {UsedModelTab.map((tab, index) => (
-                <button
-                  key={index}
-                  onClick={() => setUsedFeatured(tab)}
-                  className={`px-4 py-2 mx-1 font-bold cursor-pointer sm:font-semibold text-sm whitespace-nowrap transition-colors duration-300 ${usedfeatured === tab
-                    ? ' border-b-3 border-accent text-gray-900 '
-                    : 'hover:bg-gray-300 '
-                    }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
+        <Container className=" max-w-7xl flex-col items-center justify-center  ">
 
 
-          <SectionCarousel
-            cards={UsedCards}
-            autoPlay={false} // Set to true if desired
-            slidesToShow={{ mobile: 1.3, tablet: 2.2, desktop: 3.3 }}
-            showArrows={true}
-            showDots={true}
-          />
-          <div className='text-start px-10 py-4 border-t border-gray-300'>
-            <Link href={'/old_cars'} className="text-sm font-bold  flex  md:font-semibold text-slate-900 hover:text-accent w-max">
-              Explore More <IconChevronRight />
-            </Link>
-          </div>
-        </section>
+          <section className="w-full mt-12 border-1 bg-white  border-gray-300 rounded-xl pending-4 shadow-lg">
 
-        <section className="mt-12">
-          <div className=" mx-auto flex flex-col lg:flex-row items-center ">
-
-            {/* Left: Image */}
-            <div className=" md:rounded-lg rounded-t-lg overflow-hidden shadow-md">
-              <Image
-                width = {500}
-                height = {600}
-                src="https://imgs.search.brave.com/DpNP5A-WyKan_eoEhe9ZcOHVpq_jnDw2LfsaLvzGwAM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9qa3R5/cmUtbWVkaWEtMS5z/My5hcC1zb3V0aC0x/LmFtYXpvbmF3cy5j/b20vSktfU21hcnRf/dHlyZV8yX1gxX0NU/Q18wMV9iZDg5NDRk/ZTU3LmpwZz9mb3Jt/YXQ9YXV0byZ3aWR0/aD02NDAmcXVhbGl0/eT03NQ" // replace with actual image path
-                alt="JK Tyre Franchise"
-                className="w-full  md:rounded-lg rounded-t-lg"
-              />
-            </div>
-
-            {/* Right: Content */}
-            <div className="w-full lg:w-1/2 px-6 bg-gradient-to-b from-gray-800  to-sky-800 shadow-xl rounded-b-2xl md:rounded-b-none md:rounded-br-2xl py-10 lg:text-left"
-            >
-              <SectionHeading className="text-white ">
-                JK Tyre Franchise Verified Dealer
+            <div className="pl-4 pt-4 border-b border-gray-300 ">
+              <SectionHeading delay={0.5}>
+                New Collections
               </SectionHeading>
-              <SubHeading className="text-gray-200 ">
-                Partner with one of India’s most trusted tyre brands — <strong>JK Tyre</strong>.
-                As an authorized verified dealer, we provide complete support for franchise setup,
-                branding, and operational excellence to ensure smooth business performance.
-              </SubHeading>
-              <SubHeading className="text-gray-200 mb-6">
-                With JK Tyre’s nationwide presence and high customer trust, you can expand your
-                automotive business with guaranteed quality, genuine products, and strong after-sales support.
-              </SubHeading>
-              <Link href={'/contact'} className="px-6 py-3 bg-yellow-500 text-slate-900 cursor-pointer font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300">
-                Enquire Now
+              {/* <SubHeading className="text-lg ">
+              Explore our latest offerings with detailed insights.
+            </SubHeading> */}
+              <div className="flex overflow-x-auto  w-max ">
+                {NewModelTab.map((tab, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setNewFeatured(tab)}
+                    className={`px-4 py-2 mx-1 font-bold cursor-pointer sm:font-semibold text-sm whitespace-nowrap transition-colors duration-300 ${newfeatured === tab
+                      ? ' border-b-3 border-accent text-gray-900 '
+                      : 'hover:bg-gray-300 '
+                      }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+
+            <SectionCarousel
+              cards={NewCards}
+              autoPlay={false} // Set to true if desired
+              slidesToShow={{ mobile: 1.3, tablet: 2.2, desktop: 3.3 }}
+              showArrows={true}
+              showDots={true}
+            />
+            <div className='text-start px-10 py-4 border-t border-gray-300'>
+              <Link href={'/new_cars'} className="text-sm font-bold  flex  md:font-semibold text-slate-900 hover:text-accent w-max">
+                Explore More <IconChevronRight />
               </Link>
             </div>
+          </section>
 
-          </div>
-        </section>
+          <section className="w-full mt-12 border-1 bg-white  border-gray-300 rounded-xl pending-4 shadow-lg">
 
-        <section className="w-full mt-12 py-10  border border-gray-200 rounded-xl pending-4 shadow-lg">
-          <div className="px-8">
-            <SectionHeading >Customer Reviews</SectionHeading>
-            <SubHeading className="">See what our happy customers say about us.</SubHeading>
-          </div>
-
-          <CustomerReviews
-            reviews={[
-              { id: '1', title: 'Happy delivery Prince T&T. Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/4H4V5lpr_w0' },
-              { id: '2', title: 'Happy delivery M.A. T&T. Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/4JODQoh2Mxs' },
-              { id: '3', title: 'Very happy driver. Priti Naixa fleet. WagonR,Dzire,Aura,Ertiga all cars available', videoUrl: 'https://www.youtube.com/embed/85c56aF3s68' },
-              { id: '4', title: 'Happy delivery at Priti naixa. 2023 modal WagonR. Silver colour. Very happy Costmor', videoUrl: 'https://www.youtube.com/embed/N_rU8qLE36M' },
-              { id: '5', title: 'Happy delivery Rudra T&T . Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/S-gQ2F3yJqI' },
-              { id: '6', title: 'Happy delivery at Priti Naixa . Taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/H4iCrljn8fU' },
-            ]}
-          />
-          <div className="px-8">
-            <Testimonials />
-          </div>
-        </section>
-
-        <section className="py-12 ">
-          <div className="text-center mb-8">
-            <SectionHeading >
-              Frequently Asked Questions
-            </SectionHeading>
-            <div className=" flex justify-center">
-              <SubHeading >
-              Find answers to common queries about our tyre franchise opportunities.
-            </SubHeading>
+            <div className="pl-4 pt-4 border-b border-gray-300 ">
+              <SectionHeading delay={0.5}>
+                Used Collections
+              </SectionHeading>
+              {/* <SubHeading className="text-lg ">
+              Explore our latest offerings with detailed insights.
+            </SubHeading> */}
+              <div className="flex overflow-x-auto pb-0 w-max ">
+                {UsedModelTab.map((tab, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setUsedFeatured(tab)}
+                    className={`px-4 py-2 mx-1 font-bold cursor-pointer sm:font-semibold text-sm whitespace-nowrap transition-colors duration-300 ${usedfeatured === tab
+                      ? ' border-b-3 border-accent text-gray-900 '
+                      : 'hover:bg-gray-300 '
+                      }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
             </div>
-            
-          </div>
 
-          <Accordion items={faqs} />
-        </section>
-      </Container>
-    </main>
+
+            <SectionCarousel
+              cards={UsedCards}
+              autoPlay={false} // Set to true if desired
+              slidesToShow={{ mobile: 1.3, tablet: 2.2, desktop: 3.3 }}
+              showArrows={true}
+              showDots={true}
+            />
+            <div className='text-start px-10 py-4 border-t border-gray-300'>
+              <Link href={'/old_cars'} className="text-sm font-bold  flex  md:font-semibold text-slate-900 hover:text-accent w-max">
+                Explore More <IconChevronRight />
+              </Link>
+            </div>
+          </section>
+
+          <section className="mt-12">
+            <div className=" mx-auto flex flex-col lg:flex-row items-center ">
+
+              {/* Left: Image */}
+              <div className=" md:rounded-lg rounded-t-lg overflow-hidden shadow-md">
+                <Image
+                  width={500}
+                  height={600}
+                  src="https://imgs.search.brave.com/DpNP5A-WyKan_eoEhe9ZcOHVpq_jnDw2LfsaLvzGwAM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9qa3R5/cmUtbWVkaWEtMS5z/My5hcC1zb3V0aC0x/LmFtYXpvbmF3cy5j/b20vSktfU21hcnRf/dHlyZV8yX1gxX0NU/Q18wMV9iZDg5NDRk/ZTU3LmpwZz9mb3Jt/YXQ9YXV0byZ3aWR0/aD02NDAmcXVhbGl0/eT03NQ" // replace with actual image path
+                  alt="JK Tyre Franchise"
+                  className="w-full  md:rounded-lg rounded-t-lg"
+                />
+              </div>
+
+              {/* Right: Content */}
+              <div className="w-full lg:w-1/2 px-6 bg-gradient-to-b from-gray-800  to-sky-800 shadow-xl rounded-b-2xl md:rounded-b-none md:rounded-br-2xl py-10 lg:text-left"
+              >
+                <SectionHeading className="text-white ">
+                  JK Tyre Franchise Verified Dealer
+                </SectionHeading>
+                <SubHeading className="text-gray-200 ">
+                  Partner with one of India’s most trusted tyre brands — <strong>JK Tyre</strong>.
+                  As an authorized verified dealer, we provide complete support for franchise setup,
+                  branding, and operational excellence to ensure smooth business performance.
+                </SubHeading>
+                <SubHeading className="text-gray-200 mb-6">
+                  With JK Tyre’s nationwide presence and high customer trust, you can expand your
+                  automotive business with guaranteed quality, genuine products, and strong after-sales support.
+                </SubHeading>
+                <Link href={'/contact'} className="px-6 py-3 bg-yellow-500 text-slate-900 cursor-pointer font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300">
+                  Enquire Now
+                </Link>
+              </div>
+
+            </div>
+          </section>
+
+          <section className="w-full mt-12 py-10  border border-gray-200 rounded-xl pending-4 shadow-lg">
+            <div className="px-8">
+              <SectionHeading >Customer Reviews</SectionHeading>
+              <SubHeading className="">See what our happy customers say about us.</SubHeading>
+            </div>
+
+            <CustomerReviews
+              reviews={[
+                { id: '1', title: 'Happy delivery Prince T&T. Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/4H4V5lpr_w0' },
+                { id: '2', title: 'Happy delivery M.A. T&T. Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/4JODQoh2Mxs' },
+                { id: '3', title: 'Very happy driver. Priti Naixa fleet. WagonR,Dzire,Aura,Ertiga all cars available', videoUrl: 'https://www.youtube.com/embed/85c56aF3s68' },
+                { id: '4', title: 'Happy delivery at Priti naixa. 2023 modal WagonR. Silver colour. Very happy Costmor', videoUrl: 'https://www.youtube.com/embed/N_rU8qLE36M' },
+                { id: '5', title: 'Happy delivery Rudra T&T . Priti Naixa taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/S-gQ2F3yJqI' },
+                { id: '6', title: 'Happy delivery at Priti Naixa . Taloja phase 1 Navi Mumbai', videoUrl: 'https://www.youtube.com/embed/H4iCrljn8fU' },
+              ]}
+            />
+            <div className="px-8">
+              <Testimonials />
+            </div>
+          </section>
+
+          <section className="py-12 ">
+            <div className="text-center mb-8">
+              <SectionHeading >
+                Frequently Asked Questions
+              </SectionHeading>
+              <div className=" flex justify-center">
+                <SubHeading >
+                  Find answers to common queries about our tyre franchise opportunities.
+                </SubHeading>
+              </div>
+
+            </div>
+
+            <Accordion items={faqs} />
+          </section>
+        </Container>
+      </main>
+    </>
   );
 }
