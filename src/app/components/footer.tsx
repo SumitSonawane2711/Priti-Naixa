@@ -6,29 +6,31 @@ import Image from "next/image";
 import { IconBrandFacebook, IconBrandInstagram, IconBrandYoutube } from "@tabler/icons-react";
 import { SectionHeading } from "./section-heading";
 import { SubHeading } from "./subheading";
+import Container from "./container";
 
 export const Footer = () => {
   return (
     <footer className="bg-neutral-900 text-neutral-300 mt-16">
       {/* CTA Section */}
-      <section className="bg-sky-600 text-white text-center py-10 px-4">
-        <SectionHeading className=" text-white-100">
-          Drive Home Your Dream Car Today!
-        </SectionHeading>
-        <div className=" flex justify-center">
-          <SubHeading className=" text-gray-200 mb-4">
-            Explore our latest range of brand-new cars with exclusive offers,
-            easy financing, and post-sale support.
-          </SubHeading>
-        </div>
+        <section className="bg-sky-600  text-white text-center py-10 px-4">
+          <SectionHeading className=" text-white-100">
+            Drive Home Your Dream Car Today!
+          </SectionHeading>
+          <div className=" flex justify-center">
+            <p className="max-w-xl text-sm md:text-base text-gray-200 mb-4">
+              Explore our latest range of brand-new cars with exclusive offers,
+              easy financing, and post-sale support.
+            </p>
+          </div>
 
-        <Link
-          href="/contact"
-          className="bg-white text-gray-700 font-semibold px-6 py-3 rounded-lg shadow-lg  transition"
-        >
-          Contact Us Now
-        </Link>
-      </section>
+          <Link
+            href="/contact"
+            className="bg-white text-gray-700 font-semibold px-6 py-3 rounded-lg shadow-lg  transition"
+          >
+            Contact Us Now
+          </Link>
+        </section>
+
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-6 py-12 border-t border-neutral-800">
@@ -86,7 +88,7 @@ export const Footer = () => {
             <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
             <li><Link href="/terms-and-conditions" className="hover:text-white">Terms & Conditions</Link></li>
             <li><Link href="/faqs" className="hover:text-white">FAQs</Link></li>
-            <li><Link href="/contact" className="hover:text-white">Contact Us</Link></li>
+            <li><Link href="/contact" className="hover:text-white ">Contact Us</Link></li>
           </ul>
         </div>
 
@@ -97,7 +99,7 @@ export const Footer = () => {
             <strong>Reg. Office : </strong>  <br /> Shop 1 & 2, Tarique Galaxy, Plot-181, <br />Sector-2, Taloja, Panvel, Raigarh,(MH), Maharashtra 410208, India.
           </p>
           <p className="text-sm text-neutral-400 mb-3">
-           <strong>2nd Branh : </strong> <br />Shop No. 5/6, Abu Bakar, Empire, Surgey No. 97, <br />Shilphata Mahape Road, Opp. AK Compound, Shilphata, Mumbra - 400612, India.
+            <strong>2nd Branh : </strong> <br />Shop No. 5/6, Abu Bakar, Empire, Surgey No. 97, <br />Shilphata Mahape Road, Opp. AK Compound, Shilphata, Mumbra - 400612, India.
           </p>
           <p className="text-sm text-neutral-400">
             <strong>Phone:</strong> +91 91367 71018 <br />
