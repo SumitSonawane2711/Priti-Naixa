@@ -63,7 +63,7 @@ export default function Home() {
         "Discover a wide range of brand-new T-Permit vehicles designed for performance, comfort, and long journeys. Get the best finance and exchange offers today!",
       buttonText: "Explore New Cars",
       buttonLink: "/new_cars",
-      imageUrl: "/banner5.png",
+      imageUrl: "/priti-naixa-new-t-permitcar-banner.png",
       altText: "Brand New T-Permit Cars",
     },
     {
@@ -72,8 +72,7 @@ export default function Home() {
         "Buy trusted, inspected, and affordable used T-Permit cars with complete service history. Enjoy high mileage, reliability, and great resale value.",
       buttonText: "Browse Used Cars",
       buttonLink: "/old_cars",
-      imageUrl:
-        "/banner4.png",
+      imageUrl: "/priti-naixa-used-car-banner.png",
       altText: "Used T-Permit Cars for Sale",
     },
     // {
@@ -92,7 +91,7 @@ export default function Home() {
         "Keep your T-Permit car running like new with our expert servicing, genuine parts, and 24x7 roadside assistance. Hassle-free maintenance guaranteed.",
       buttonText: "Book a Service",
       buttonLink: "/services",
-      imageUrl: "/banner7.png",
+      imageUrl: "/priti-naixa-t-permit-car-service-banner.png",
       altText: "T-Permit Car Servicing and Maintenance",
     },
   ];
@@ -245,7 +244,7 @@ export default function Home() {
                   With JK Tyre’s nationwide presence and high customer trust, you can expand your
                   automotive business with guaranteed quality, genuine products, and strong after-sales support.
                 </SubHeading>
-                <Link href={'/contact'} className="px-6 py-3 bg-yellow-500 text-slate-900 cursor-pointer font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300">
+                <Link href={'/contact'} className="px-4 py-2 text-sm hover:bg-yellow-400 border border-yellow-400 shadow-md text-white  hover:text-slate-900 cursor-pointer font-semibold transition-all duration-300">
                   Enquire Now
                 </Link>
               </div>
