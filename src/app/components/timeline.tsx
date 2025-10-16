@@ -37,7 +37,7 @@ export const Timeline = () => {
 ];
 
     return (
-        <div ref={ref} className='py-10'>
+        <div ref={ref} className='py-6'>
             {data.map((year, idx) => (
                 <div key={year.year} className='mb-4'>
                     <motion.h2
@@ -68,11 +68,11 @@ export const Timeline = () => {
                                             ease: 'easeInOut',
                                             delay: 0.1 * idx,
                                         }}
-                                        className='text-neutral-600'
+                                        className='text-neutral-800 font-semibold'
                                     >{item.title}</motion.h3>
                                 </Step>
 
-                                {item.description && <p className='text-neutral-400 pt-1'>{item.description}</p>}
+                                {item.description && <p className='text-neutral-600 max-w-2xl pt-1 text-sm md:text-base'>{item.description}</p>}
                             </div>
                         ))}
                     </div>
@@ -96,7 +96,7 @@ const Step = (
         delay: 0.2 * idx
     }}
     className={cn('flex items-start gap-2', className)}>
-        <IconCircleCheckFilled className='h-4 w-4 mt-1.5 text-neutral-500' />
+        <IconCircleCheckFilled className='h-5 w-5 mt-1 text-blue-500' />
         {children}
     </motion.div>
 }
