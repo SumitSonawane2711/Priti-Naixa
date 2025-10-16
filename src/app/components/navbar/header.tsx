@@ -48,7 +48,7 @@ export const Header = () => {
         <div className=" flex max-w-6xl items-center justify-between ">
           {/* Logo */}
           <div className="flex items-center gap-10">
-            <Link href={"/"} className="flex items-center gap-2 text-xl font-bold">
+            <Link href={"/"} className="flex  items-center gap-2 md:text-xl font-bold">
               <Image
                 className="w-10 h-10 object-contain"
                 src={"/logo.png"}
@@ -61,7 +61,7 @@ export const Header = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden items-center gap-2 md:flex relative ">
+            <div className="hidden items-center gap-2 md:flex flex-wrap relative ">
               {navItems.map((item, idx) => (
                 <div
                   key={idx}
