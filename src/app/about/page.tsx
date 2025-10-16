@@ -26,7 +26,7 @@ export default function AboutPage() {
           </SectionHeading>
           {/* Timeline Component */}
           <Timeline />
-          <p className="text-secondary text-sm md:text-base leading-relaxed">
+          <p className=" text-sm md:text-base leading-relaxed">
             Initially, in <span className="font-semibold">May 2018</span>, we started
             as a proprietorship under the name{" "}
             <span className="font-semibold">Yogendra Singh Tours and Travels</span>,
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <span className="font-semibold">Priti Naixa Private Limited</span> in{" "}
             <span className="font-semibold">March 2025</span>.
           </p>
-          <p className="text-secondary text-sm md:text-base leading-relaxed mt-3">
+          <p className="text-sm md:text-base leading-relaxed mt-3">
             Our founder and CEO/MD is{" "}
             <span className="font-semibold">Mrs. Priti</span>, joined by{" "}
             <span className="font-semibold">Mr. Yogendra Singh</span> as the second
@@ -44,7 +44,7 @@ export default function AboutPage() {
             who work directly with senior management in an open, engaging, and
             satisfying environment.
           </p>
-          <p className="text-secondary text-sm md:text-base leading-relaxed mt-3">
+          <p className="text-sm md:text-base leading-relaxed mt-3">
             We take pride in being recognized as the{" "}
             <span className="font-semibold">Best Place to Work</span> for employee
             engagement and satisfaction.
@@ -53,16 +53,16 @@ export default function AboutPage() {
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div className="bg-white border rounded-xl p-6 shadow-md">
-            <SectionHeading >Our Mission</SectionHeading>
-            <SubHeading >
+          <div className=" border rounded-xl p-6 shadow-md bg-gradient-to-b from-gray-800  to-sky-800">
+            <SectionHeading className="text-white">Our Mission</SectionHeading>
+            <SubHeading  className="text-gray-200">
               To cover the maximum geographical areas in Mumbai and Maharashtra in
               the T-permit passenger vehicle business segment.
             </SubHeading>
           </div>
-          <div className="bg-white border rounded-xl p-6 shadow-md">
-            <SectionHeading >Our Vision</SectionHeading>
-            <SubHeading >
+          <div className="border rounded-xl p-6 shadow-md bg-gradient-to-b from-gray-800  to-sky-800">
+            <SectionHeading className="text-white">Our Vision</SectionHeading>
+            <SubHeading className="text-gray-200">
               To empower individuals, drivers, and investors to build sustainable
               livelihoods by starting their own small businesses in tours and
               travels.

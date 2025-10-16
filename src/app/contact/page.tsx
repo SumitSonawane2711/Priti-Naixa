@@ -52,11 +52,9 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col gap-6 "
             >
-              <SubHeading >
+              <SubHeading className="text-center" >
                 Fill out the form and we’ll get back to you as soon as possible.
               </SubHeading>
-
-
 
               {/* Contact Form */}
               <ContactForm/>

@@ -45,12 +45,12 @@ export default function ServiceDetailPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop"
+          src="/service-banner.png"
           alt="Services Banner"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-50 bg-slate-700"
         />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
