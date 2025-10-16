@@ -141,7 +141,7 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
               className="flex-shrink-0 px-2"
               style={{ width: `${100 / visibleSlides}%` }}
             >
-              <div className="w-full bg-gray-50 border border-gray-300 rounded-xl overflow-hidden transform transition-all duration-300 relative group">
+              <div className="w-full bg-gray-50 border border-gray-300 rounded-lg overflow-hidden transform transition-all duration-300 relative group">
                 {/* Image */}
                 <div
                   className="h-48 sm:h-56 bg-cover bg-center"
@@ -150,18 +150,18 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
                 </div>
 
                 {/* Content */}
-                <div className="p-4 flex flex-col h-35 justify-between">
+                <div className="px-2 py-4 flex flex-col h-35 justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-1 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className=" max-w-lg  text-base md:text-lg font-bold md:font-semibold text-gray-800 mb-1 line-clamp-2 group-hover:text-blue-600 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-gray-600 line-clamp-3">
+                    <p className="text-sm text-gray-600 line-clamp-3 ">
                       {card.description}
                     </p>
                   </div>
                   <Link
                     href={card.detailLink}
-                    className="text-sm z-10 bg-yellow-500 w-max py-1 px-4 font-semibold shadow-md text-black"
+                    className="text-sm z-10 hover:bg-yellow-400 border-1 border-yellow-400 w-max py-1 px-4 font-semibold shadow-md text-black transition-all duration-300"
                   >See Details</Link>
                 </div>
               </div>

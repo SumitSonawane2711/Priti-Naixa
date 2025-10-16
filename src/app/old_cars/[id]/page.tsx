@@ -22,7 +22,7 @@ const CarDetailPage = ({params} : {params: {id:string}}) => {
     .map((car) => ({
       id: car.id,
       title: car.name,
-      description: car.description,
+      description: `${car.transmission} | ${car.fuelType}`,
       imageUrl: car.images[0],
       altText: `${car.name} ${car.model}`,
       detailLink: `/old_cars/${car.id}`,

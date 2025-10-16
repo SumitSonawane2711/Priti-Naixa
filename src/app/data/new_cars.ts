@@ -24,93 +24,7 @@ export const brands = ["Maruti Suzuki", "Hyundai", "Tata"];
 
 export const cars: Car[] = [
   // Maruti Suzuki
-  {
-    id: "maruti-wagonr-tourh3",
-    brand: "Maruti Suzuki",
-    name: "WagonR Tour H3",
-    year: "2025",
-    fuelType: ["Petrol", "CNG"],
-    bodyType: "Hatchback",
-    transmission: ["Manual", "Automatic"],
-    seats: 5,
-    rto: ["All Mumbai", "MH"],
-    discount: "Depends on variant",
-    color: "All",
-    budget: "Affordable",
-    keyFeatures: {
-      Engine: "1.2L K12N Dual VVT Petrol Engine",
-      Power: "83 PS @ 6000 rpm",
-      Torque: "113 Nm @ 4000 rpm",
-      Mileage: "21.79 km/l (Petrol), 28.4 km/kg (CNG)",
-      Transmission: "5-speed Manual, 5-speed AMT",
-      Fuel: "Petrol, CNG",
-    },
-    images: [
-      "/cars/new-cars/maruti-suzuki/wagon-r-tour-1.png",
-      "/cars/new-cars/maruti-suzuki/wagon-r-tour-Image-2.png",
-      "/cars/new-cars/maruti-suzuki/wagonr-silky-silver.png",
-    ],
-    description:
-      "The 2025 Maruti Suzuki Wagonr-Tourh3 combines comfort and efficiency, perfect for city drives with flexible CNG and Petrol options.",
-  },
-  {
-    id: "maruti-wagonr-lxi",
-    brand: "Maruti Suzuki",
-    name: "WagonR LXI",
-    year: "2025",
-    fuelType: ["Petrol", "CNG"],
-    bodyType: "Hatchback",
-    transmission: ["Manual", "Automatic"],
-    seats: 5,
-    rto: ["All Mumbai", "MH"],
-    discount: "Depends on variant",
-    color: "All",
-    budget: "Affordable",
-    keyFeatures: {
-      Engine: "1.2L K12N Dual VVT Petrol Engine",
-      Power: "83 PS @ 6000 rpm",
-      Torque: "113 Nm @ 4000 rpm",
-      Mileage: "21.79 km/l (Petrol), 28.4 km/kg (CNG)",
-      Transmission: "5-speed Manual, 5-speed AMT",
-      Fuel: "Petrol, CNG",
-    },
-    images: [
-      "/cars/new-cars/maruti-suzuki/maruti-wagonr-lxi-1.png",
-      "/cars/new-cars/maruti-suzuki/maruti-wagonr-lxi-2.png",
-      "/cars/new-cars/maruti-suzuki/maruti-wagonr-lxi-4.png",
-    ],
-    description:
-      "The 2025 Maruti Suzuki Wagonr-Tourh3 combines comfort and efficiency, perfect for city drives with flexible CNG and Petrol options.",
-  },
-  {
-    id: "maruti-wagon-r-vxi",
-    brand: "Maruti Suzuki",
-    name: "WagonR VXI",
-    year: "2025",
-    fuelType: ["Petrol", "CNG"],
-    bodyType: "Hatchback",
-    transmission: ["Manual", "Automatic"],
-    seats: 5,
-    rto: ["All Mumbai", "MH"],
-    discount: "Depends on variant",
-    color: "All",
-    budget: "Affordable",
-    keyFeatures: {
-      Engine: "1.2L K12N Dual VVT Petrol Engine",
-      Power: "83 PS @ 6000 rpm",
-      Torque: "113 Nm @ 4000 rpm",
-      Mileage: "21.79 km/l (Petrol), 28.4 km/kg (CNG)",
-      Transmission: "5-speed Manual, 5-speed AMT",
-      Fuel: "Petrol, CNG",
-    },
-    images: [
-      "/cars/new-cars/maruti-suzuki/maruti-wagon-r-vxi-1.png",
-      "/cars/new-cars/maruti-suzuki/maruti-wagon-r-vxi-2.png",
-      "/cars/new-cars/maruti-suzuki/maruti-wagon-r-vxi-3.png",
-    ],
-    description:
-      "The Maruti-Wagon-r-vxi CNG / Petrol offers style and economy, combining a premium sedan feel with exceptional fuel efficiency for daily rides.",
-  },
+  
   {
     id: "maruti-ertiga-tourm",
     brand: "Maruti Suzuki",
@@ -133,9 +47,9 @@ export const cars: Car[] = [
       Fuel: "Petrol, CNG",
     },
     images: [
+      "/cars/new-cars/maruti-suzuki/maruti-ertiga-tourm-3.png",
       "/cars/new-cars/maruti-suzuki/maruti-ertiga-tourm-1.png",
       "/cars/new-cars/maruti-suzuki/maruti-ertiga-tourm-2.png",
-      "/cars/new-cars/maruti-suzuki/maruti-ertiga-tourm-3.png",
     ],
     description:
       "The Maruti-Ertiga-Tourm CNG / Petrol offers style and economy, combining a premium sedan feel with exceptional fuel efficiency for daily rides.",
@@ -162,8 +76,8 @@ export const cars: Car[] = [
       Fuel: "Petrol, CNG",
     },
     images: [
-      "/cars/new-cars/maruti-suzuki/maruti-ertiga-vxi-1.png",
       "/cars/new-cars/maruti-suzuki/maruti-ertiga-vxi-2.png",
+      "/cars/new-cars/maruti-suzuki/maruti-ertiga-vxi-1.png",
       "/cars/new-cars/maruti-suzuki/maruti-ertiga-vxi-3.png",
     ],
     description:
@@ -220,12 +134,99 @@ export const cars: Car[] = [
       Fuel: "Petrol, CNG",
     },
     images: [
-      "/cars/new-cars/maruti-suzuki/maruti-dzire-tours-1.png",
       "/cars/new-cars/maruti-suzuki/maruti-dzire-tours-2.png",
+      "/cars/new-cars/maruti-suzuki/maruti-dzire-tours-1.png",
       "/cars/new-cars/maruti-suzuki/maruti-dzire-tours-3.png",
     ],
     description:
       "The Maruti Dzire-Tours CNG / Petrol offers style and economy, combining a premium sedan feel with exceptional fuel efficiency for daily rides.",
+  },
+  {
+    id: "maruti-wagonr-tourh3",
+    brand: "Maruti Suzuki",
+    name: "WagonR Tour H3",
+    year: "2025",
+    fuelType: ["Petrol", "CNG"],
+    bodyType: "Hatchback",
+    transmission: ["Manual", "Automatic"],
+    seats: 5,
+    rto: ["All Mumbai", "MH"],
+    discount: "Depends on variant",
+    color: "All",
+    budget: "Affordable",
+    keyFeatures: {
+      Engine: "1.2L K12N Dual VVT Petrol Engine",
+      Power: "83 PS @ 6000 rpm",
+      Torque: "113 Nm @ 4000 rpm",
+      Mileage: "21.79 km/l (Petrol), 28.4 km/kg (CNG)",
+      Transmission: "5-speed Manual, 5-speed AMT",
+      Fuel: "Petrol, CNG",
+    },
+    images: [
+      "/cars/new-cars/maruti-suzuki/wagonr-silky-silver.png",
+      "/cars/new-cars/maruti-suzuki/wagon-r-tour-Image-2.png",
+      "/cars/new-cars/maruti-suzuki/wagon-r-tour-1.png",
+    ],
+    description:
+      "The 2025 Maruti Suzuki Wagonr-Tourh3 combines comfort and efficiency, perfect for city drives with flexible CNG and Petrol options.",
+  },
+  {
+    id: "maruti-wagonr-lxi",
+    brand: "Maruti Suzuki",
+    name: "WagonR LXI",
+    year: "2025",
+    fuelType: ["Petrol", "CNG"],
+    bodyType: "Hatchback",
+    transmission: ["Manual", "Automatic"],
+    seats: 5,
+    rto: ["All Mumbai", "MH"],
+    discount: "Depends on variant",
+    color: "All",
+    budget: "Affordable",
+    keyFeatures: {
+      Engine: "1.2L K12N Dual VVT Petrol Engine",
+      Power: "83 PS @ 6000 rpm",
+      Torque: "113 Nm @ 4000 rpm",
+      Mileage: "21.79 km/l (Petrol), 28.4 km/kg (CNG)",
+      Transmission: "5-speed Manual, 5-speed AMT",
+      Fuel: "Petrol, CNG",
+    },
+    images: [
+      "/cars/new-cars/maruti-suzuki/maruti-wagonr-lxi-3.png",
+      "/cars/new-cars/maruti-suzuki/maruti-wagonr-lxi-2.png",
+      "/cars/new-cars/maruti-suzuki/maruti-wagonr-lxi-4.png",
+    ],
+    description:
+      "The 2025 Maruti Suzuki Wagonr-Tourh3 combines comfort and efficiency, perfect for city drives with flexible CNG and Petrol options.",
+  },
+  {
+    id: "maruti-wagon-r-vxi",
+    brand: "Maruti Suzuki",
+    name: "WagonR VXI",
+    year: "2025",
+    fuelType: ["Petrol", "CNG"],
+    bodyType: "Hatchback",
+    transmission: ["Manual", "Automatic"],
+    seats: 5,
+    rto: ["All Mumbai", "MH"],
+    discount: "Depends on variant",
+    color: "All",
+    budget: "Affordable",
+    keyFeatures: {
+      Engine: "1.2L K12N Dual VVT Petrol Engine",
+      Power: "83 PS @ 6000 rpm",
+      Torque: "113 Nm @ 4000 rpm",
+      Mileage: "21.79 km/l (Petrol), 28.4 km/kg (CNG)",
+      Transmission: "5-speed Manual, 5-speed AMT",
+      Fuel: "Petrol, CNG",
+    },
+    images: [
+      "/cars/new-cars/maruti-suzuki/maruti-wagon-r-vxi-1.png",
+      "/cars/new-cars/maruti-suzuki/maruti-wagon-r-vxi-2.png",
+      "/cars/new-cars/maruti-suzuki/maruti-wagon-r-vxi-3.png",
+    ],
+    description:
+      "The Maruti-Wagon-r-vxi CNG / Petrol offers style and economy, combining a premium sedan feel with exceptional fuel efficiency for daily rides.",
   },
 
   // Hyundai
@@ -280,9 +281,9 @@ export const cars: Car[] = [
       Fuel: "CNG",
     },
     images: [
+      "/cars/new-cars/hundai/hyundai-aura-s-3.png",
       "/cars/new-cars/hundai/hyundai-aura-s-1.png",
       "/cars/new-cars/hundai/hyundai-aura-s-2.png",
-      "/cars/new-cars/hundai/hyundai-aura-s-3.png",
     ],
     description:
       "The Hyundai Aura-s offers style and economy, combining a premium sedan feel with exceptional fuel efficiency for daily rides.",
@@ -309,9 +310,9 @@ export const cars: Car[] = [
       Fuel: "CNG",
     },
     images: [
+      "/cars/new-cars/hundai/hyundai-aura-sx-3.png",
       "/cars/new-cars/hundai/hyundai-aura-sx-1.png",
       "/cars/new-cars/hundai/hyundai-aura-sx-2.png",
-      "/cars/new-cars/hundai/hyundai-aura-sx-3.png",
     ],
     description:
       "The Hyundai Aura SX CNG offers style and economy, combining a premium sedan feel with exceptional fuel efficiency for daily rides.",

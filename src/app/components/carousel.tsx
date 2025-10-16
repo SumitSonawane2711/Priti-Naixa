@@ -6,6 +6,7 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { Heading } from "./heading";
 import { SubHeading } from "./subheading";
 import Head from "next/head";
+import Image from "next/image";
 
 interface Slide {
   title: string;
@@ -92,20 +93,9 @@ const Carousel: React.FC<CarouselProps> = ({
   return (
 
     <>
-      <Head>
-        {slides.map((slide, index) => (
-          <link
-            key={index}
-            rel="preload"
-            as="image"
-            href={slide.imageUrl}
-            fetchPriority="high"
-          />
-        ))}
-      </Head>
-
-      <div className="relative w-full h-[80vh] md:h-[90vh] max-w-screen overflow-hidden bg-gray-900 border-b-2 border-gray-500">
+      <div className="relative w-full h-[80vh] md:h-[90vh] max-w-screen overflow-hidden border-b-2 border-gray-500">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
+
           <motion.div
             key={currentIndex}
             custom={direction}
@@ -114,13 +104,22 @@ const Carousel: React.FC<CarouselProps> = ({
             animate="center"
             exit="exit"
             className="absolute inset-0 flex flex-col-reverse md:flex-row"
-            style={{
-              backgroundImage: `url(${currentSlide.imageUrl})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }}
+          // style={{
+          //   backgroundImage: `url(${currentSlide.imageUrl})`,
+          //   backgroundSize: 'cover',
+          //   backgroundPosition: 'center',
+          //   backgroundRepeat: 'no-repeat',
+          // }}
           >
+            <Image
+              src={currentSlide.imageUrl}
+              fill
+              alt="Banner"
+              priority
+              quality={90}
+              style={{ objectFit: "cover" }}
+
+            />
             {/* LEFT SIDE CONTENT BOX */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -128,9 +127,9 @@ const Carousel: React.FC<CarouselProps> = ({
                 variants={textMotion}
                 animate="animate"
                 exit="exit"
-                className="bg-gray-900 md:bg-gray-900/90 p-6  shadow-lg h-max md:m-10 self-end"
+                className="z-10 bg-gray-900 md:bg-gray-900/90 p-6  shadow-lg h-max md:m-10 self-end"
               >
-                <Heading  className=" md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white">
+                <Heading className=" md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white">
                   {currentSlide.title}
                 </Heading>
                 <SubHeading className="text-sm md:text-xl lg:text-xl mb-4 md:mb-8 font-light text-gray-200 leading-relaxed">
@@ -146,13 +145,18 @@ const Carousel: React.FC<CarouselProps> = ({
             </AnimatePresence>
 
             {/* RIGHT SIDE IMAGE */}
-            <div
-              className="md:hidden w-full md:w-1/2 h-[50vh] md:h-full bg-center bg-cover relative"
-              style={{ backgroundImage: `url(${currentSlide.imageUrl})` }}
-              aria-label={currentSlide.altText || currentSlide.title}
-            >
-              <div className="" />
-            </div>
+            <motion.div className="relative h-[400]  md:hidden overflow-hidden">
+              <Image
+                src={currentSlide.imageUrl}
+                alt="Banner"
+                fill
+                priority
+                quality={90}
+                style={{ objectFit: "cover" }}
+                className="scale-120 object-cover transition-transform duration-700"
+              />
+              {/* Overlay content */}
+            </motion.div>
           </motion.div>
         </AnimatePresence>
 

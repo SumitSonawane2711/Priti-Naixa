@@ -22,7 +22,7 @@ const CarDetailPage = ({params} : {params: {id:string}}) => {
     .map((car) => ({
       id: car.id,
       title: car.name,
-      description: car.model,
+      description: `${car.transmission} | ${car.fuelType}`,
       imageUrl: car.images[0],
       altText: `${car.name} ${car.model}`,
       detailLink: `/new_cars/${car.id}`,
@@ -61,8 +61,11 @@ const CarDetailPage = ({params} : {params: {id:string}}) => {
           </h1>
 
           <div className="flex align-middle gap-3 mb-4  items-center">
-            <Badge className="bg-accent shadow-md text-yellow-800 px-3 py-1 text-sm">
+            <Badge className="bg-accent shadow-md text-yellow-900 px-3 py-1 text-sm">
               T Permit Vehicle
+            </Badge>
+            <Badge className="bg-accent shadow-md text-yellow-900 px-3 py-1 text-sm">
+              New Vehicle
             </Badge>
             <p className="text-gray-600 mb-3 text-sm sm:text-base">
               Model Year: {car.year}

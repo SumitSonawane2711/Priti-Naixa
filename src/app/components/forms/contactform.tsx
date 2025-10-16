@@ -97,7 +97,7 @@ export default function ContactForm() {
         whileTap={{ scale: 0.95 }}
         disabled={loading}
         type="submit"
-        className={`bg-yellow-400 w-1/2 py-3 rounded-lg font-semibold transition text-yellow-900 cursor-pointer mx-auto ${
+        className={`px-4 py-2 text-sm rounded hover:bg-yellow-400 border border-yellow-400 shadow-md cursor-pointer font-semibold transition-all duration-300 ${
           loading ? "opacity-70 cursor-not-allowed" : ""
         }`}
       >

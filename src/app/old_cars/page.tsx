@@ -35,13 +35,11 @@ export default function OldCarsPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className={`px-6 py-2 rounded-lg border border-gray-400 cursor-pointer font-medium text-sm md:text-base transition-all duration-300 
-                         ${activeBrand === brand
-                                ? "bg-accent text-neutral-800 shadow-md font-semibold scale-105"
-                                : "bg-white text-gray-700 hover:bg-gray-100"
+                        className={`px-6 py-2 bg-white border border-yellow-400/50 cursor-pointer font-medium text-sm md:text-base transition-all duration-300 
+              ${activeBrand === brand
+                                ? "bg-yellow-400 text-blak shadow-md font-semibold"
+                                : "bg-white text-gray-700 "
                             }`}
-                        whileTap={{ scale: 0.95 }}
-                        whileHover={{ scale: activeBrand === brand ? 1.05 : 1.02 }}
                     >
                         {brand}
                     </motion.button>
@@ -96,9 +94,7 @@ export default function OldCarsPage() {
                                                 {car.budget}
                                             </span>
                                             <motion.button
-                                                whileHover={{ scale: 1.05 }}
-                                                whileTap={{ scale: 0.95 }}
-                                                className="bg-yellow-400 text-amber-900 font-semibold cursor-pointer hover:text-white text-sm px-4 py-1 rounded hover:bg-blue-600 transition"
+                                                className=" text-sm cursor-pointer z-10 hover:bg-yellow-400 border-1 border-yellow-400 w-max py-1 px-4 font-semibold shadow-md text-black transition-all duration-300"
                                             >
                                                 View Details
                                             </motion.button>
