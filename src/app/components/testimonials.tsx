@@ -8,39 +8,34 @@ export const Testimonials = () => {
     const data = [
         {
             quote:
-                "I booked a T-permit cab from Priti Naixa for my Mumbai to Pune business trip. The service was punctual and the driver was extremely professional. Highly recommended!",
-            name: "Rajesh Sharma",
-            avatar: "https://imgs.search.brave.com/OuO4Z-TnN7qPnap7daRqnxt8r_gV63ug1XQ-KbYcp30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmNyYWl5b24uY29t/LzIwMjMtMTEtMTUv/R2FnWC00MDFSbUt6/aGs1SDZubm15US53/ZWJw"
+                "Good service and same things found whatever seen in videos. Staff behaivor is very good. We are happy.",
+            name: "Sayyed Javed",
+            avatar: ""
         },
         {
             quote:
-                "Very smooth experience with Priti Naixa! The booking process was simple, and the car was in excellent condition. Best service for T-permit rentals.",
-            name: "Sneha Patel",
-            avatar: "https://imgs.search.brave.com/OuO4Z-TnN7qPnap7daRqnxt8r_gV63ug1XQ-KbYcp30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmNyYWl5b24uY29t/LzIwMjMtMTEtMTUv/R2FnWC00MDFSbUt6/aGs1SDZubm15US53/ZWJw"
+                "Efficient service and helping staff are the USPs of Priti Naixa, Specially the owner, Priti mam is a very genuine and helping person.",
+            name: "Balram sharan Singh dayal",
+            avatar: ""
         },
         {
             quote:
-                "I needed a T-permit car for airport transfers in Mumbai, and Priti Naixa made it completely hassle-free. Great communication and reliable drivers.",
-            name: "Amit Deshmukh",
-            avatar: "https://imgs.search.brave.com/OuO4Z-TnN7qPnap7daRqnxt8r_gV63ug1XQ-KbYcp30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmNyYWl5b24uY29t/LzIwMjMtMTEtMTUv/R2FnWC00MDFSbUt6/aGs1SDZubm15US53/ZWJw"
+                "I had an amazing experience with this company. The customer service was outstanding, and the product was exactly what I was looking for.",
+            name: "Vivek Badhautiya",
+            avatar: ""
+        },
+
+        {
+            quote:
+                "Very nice peoples and they are kind.If you want to buy a car go to Priti Naixa.Their work for the car's documents is very fast.",
+            name: "Aaryan saroj",
+            avatar: ""
         },
         {
             quote:
-                "Superb service! The driver was polite, the vehicle was clean, and the trip from Nashik to Mumbai was very comfortable. Will definitely book again.",
-            name: "Priya Iyer",
-            avatar: "https://imgs.search.brave.com/OuO4Z-TnN7qPnap7daRqnxt8r_gV63ug1XQ-KbYcp30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmNyYWl5b24uY29t/LzIwMjMtMTEtMTUv/R2FnWC00MDFSbUt6/aGs1SDZubm15US53/ZWJw"
-        },
-        {
-            quote:
-                "I often travel for work and Priti Naixa’s T-permit cars are my go-to choice. Affordable pricing and very professional team.",
-            name: "Vikas Pawar",
-            avatar: "https://imgs.search.brave.com/OuO4Z-TnN7qPnap7daRqnxt8r_gV63ug1XQ-KbYcp30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmNyYWl5b24uY29t/LzIwMjMtMTEtMTUv/R2FnWC00MDFSbUt6/aGs1SDZubm15US53/ZWJw"
-        },
-        {
-            quote:
-                "Had a wonderful experience! The team helped me find a T-permit cab quickly for my family trip. Great service quality and customer support.",
-            name: "Neha Joshi",
-            avatar: "https://imgs.search.brave.com/OuO4Z-TnN7qPnap7daRqnxt8r_gV63ug1XQ-KbYcp30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmNyYWl5b24uY29t/LzIwMjMtMTEtMTUv/R2FnWC00MDFSbUt6/aGs1SDZubm15US53/ZWJw"
+                "I have great experience at priti naixa Staff was really good specially jasmine And mam in very humble and kind women",
+            name: "Renita Lopes",
+            avatar: ""
         }
     ]
     return (
@@ -69,9 +64,13 @@ const TestimonialCard = ({ quote, name, avatar }: { quote: string, name: string,
         <div className='flex flex-col bg-gray-50 justify-between gap-4 mx-2 rounded-xl h-50 w-full max-w-60 shadow-md p-4'>
             <p className='text-sm text-neutral-700'>{quote}</p>
             <div className='flex items-center gap-4'>
-                <Image width={30} height={30} src={avatar} alt={name}
+                {avatar ? <Image width={30} height={30} src={avatar} alt={name}
                     className='size-10 rounded-full object-cover'
-                />
+                /> :
+                    <div className="flex items-center object-contain justify-center w-10 h-10 p-2 rounded-full bg-gradient-to-r from-yellow-400 to-sky-500 text-yellow-900 text-md font-bold">
+                        {name.charAt(0).toUpperCase()}
+                    </div>}
+
                 <p className='text-sm text-neutral-500'>{name}</p>
             </div>
 
