@@ -16,8 +16,54 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: {
+    default: "Priti Naixa  | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
+    template: "%s | Priti Naixa",
+  },
+  description:
+    "Priti Naixa provides trusted T-Permit vehicle services, RTO registration, finance assistance, and & Car sale purchase and exchange.",
+  keywords: [
+    "T-permit vehicles",
+    "commercial vehicle showroom",
+    "vehicle registration",
+    "RTO services",
+    "taxi permit",
+    "car loan assistance",
+    "Priti-Naixa",
+    "Car Sale Purchase"
+  ],
+  metadataBase: new URL("https://pritinaixa.com"), 
+  openGraph: {
+    title: "Priti Naixa  | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
+    description:
+      "Your one-stop solution for commercial vehicle sales, purchase, registration, and permits.",
+    url: "https://pritinaixa.com",
+    siteName: "Priti-Naixa",
+    images: [
+      {
+        url: "https://pritinaixa.com/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Priti-Naixa T-Permit Vehicle Showroom",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Priti Naixa | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
+    description:
+      "T-Permit vehicle showroom offering sales, RTO, purchase, registration, and finance services.",
+    images: ["https://pritinaixa.com/og-banner.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://pritinaixa.com",
+  },
 };
 
 export default function RootLayout({
