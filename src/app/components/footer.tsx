@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { IconBrandFacebook, IconBrandInstagram, IconBrandYoutube } from "@tabler/icons-react";
 import { SectionHeading } from "./section-heading";
-import { SubHeading } from "./subheading";
-import Container from "./container";
 
 export const Footer = () => {
   return (
