@@ -6,6 +6,7 @@ import Image from "next/image";
 import { cars } from "@/app/data/old_cars";
 import Link from "next/link";
 import { Heading } from "../components/heading";
+import Container from "../components/container";
 
 // Group cars by brand
 const groupedCars = cars.reduce((acc, car) => {
@@ -20,7 +21,8 @@ export default function OldCarsPage() {
     const [activeBrand, setActiveBrand] = useState(brands[0]);
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-6 md:px-12 lg:px-20">
+        <Container className="max-w-7xl flex-col items-center justify-center bg-gray-50 py-12 px-6 md:px-12 lg:px-20">
+           
             {/* Page Header */}
             <Heading className=" mb-10">
                 Explore Our Used 2023 to 2025 Car Collection
@@ -116,6 +118,6 @@ export default function OldCarsPage() {
             >
                 ✨ All models are available in multiple colors & variants
             </motion.div>
-        </div>
+        </Container>
     );
 }

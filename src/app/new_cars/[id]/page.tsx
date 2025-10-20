@@ -8,6 +8,28 @@ import { SectionHeading } from "@/app/components/section-heading";
 import { SubHeading } from "@/app/components/subheading";
 import ProductCarousel from "@/app/components/product_carousel";
 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const { id } = params;
+  const car = carsNew.find((c) => c.id === id);
+
+  if (!car) {
+    return {
+      title: "New Car Details | Priti Naixa Pvt. Ltd.",
+      description: "Detailed information about our T-permit new cars at Priti Naixa Pvt. Ltd.",
+      alternates: {
+        canonical: "https://pritinaixa.com/new-cars",
+      },
+    };
+  }
+
+  return {
+    title: `${car.name} ${car.model}${car.variant ? ` (${car.variant})` : ""} | Priti Naixa Pvt. Ltd.`,
+    description: `${car.name} ${car.model} (${car.year}) — ${car.transmission} • ${car.fuelType}. Learn more and book now.`,
+    alternates: {
+      canonical: `https://pritinaixa.com/new-cars/${car.id}`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return carsNew.map((car) => ({ id: car.id }));

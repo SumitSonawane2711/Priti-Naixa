@@ -6,6 +6,9 @@ import Image from "next/image";
 import { cars } from "@/app/data/new_cars";
 import Link from "next/link";
 import { Heading } from "../components/heading";
+import Container from "../components/container";
+
+
 
 // Group cars by brand
 const groupedCars = cars.reduce((acc, car) => {
@@ -20,7 +23,7 @@ export default function NewCarsPage() {
     const [activeBrand, setActiveBrand] = useState(brands[0]);
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-6 md:px-12 lg:px-20">
+        <Container className="max-w-7xl flex-col items-center justify-center bg-gray-50 py-12 px-6 md:px-12 lg:px-20">
             {/* Page Header */}
             <Heading className=" mb-10">
                 Explore Our New 2025 Car Collection
@@ -117,6 +120,6 @@ export default function NewCarsPage() {
             >
                 ✨ All models are available in multiple colors & variants
             </motion.div>
-        </div>
+        </Container>
     );
 }
