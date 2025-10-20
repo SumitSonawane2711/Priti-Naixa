@@ -8,10 +8,11 @@ import { Heading } from "../components/heading"
 import { SubHeading } from "../components/subheading";
 import ContactForm from "../components/forms/contactform";
 
+
 const Contact = () => {
   return (
-    <main className="min-h-screen  ">
-      <Container className="min-h-screen p-4 md:pt-20 md:pb-10 ">
+    <main >
+      <Container className="max-w-7xl flex-col items-center justify-center p-4 md:pt-20 md:pb-10 ">
         <div className=" sm:flex justify-between items-center py-6 sm:py-0 ">
           <Heading> Contact US</Heading>
           {/* Info Cards */}

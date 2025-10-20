@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Container from "../components/container";
+
+
 
 export default function ServiceDetailPage() {
   const services = [
@@ -68,64 +71,69 @@ export default function ServiceDetailPage() {
         </motion.div>
       </section>
 
-      {/* Marketing Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-6xl mx-auto px-4 py-12 text-center"
-      >
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-          What Services Do We Provide Apart from Car Sales?
-        </h2>
-        <p className="text-gray-600 max-w-3xl mx-auto">
-          We’re not just about selling cars — we ensure a seamless experience
-          from the moment you step in until long after your purchase. With
-          financing, insurance, servicing, and buyback options, we’ve got your
-          automotive needs covered.
-        </p>
-      </motion.section>
+      <Container className="max-w-7xl flex-col items-center justify-center">
 
-      {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-4 pb-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 text-left"
-            >
-              <h3 className="text-xl font-semibold text-sky-700 mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+        {/* Marketing Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto px-4 py-12 text-center"
+        >
+          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+            What Services Do We Provide Apart from Car Sales?
+          </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            We’re not just about selling cars — we ensure a seamless experience
+            from the moment you step in until long after your purchase. With
+            financing, insurance, servicing, and buyback options, we’ve got your
+            automotive needs covered.
+          </p>
+        </motion.section>
 
-      {/* Closing Note */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className=" text-neutral-800 text-center py-10 px-4"
-      >
-        <h3 className="text-2xl font-semibold mb-3">Customer Satisfaction First</h3>
-        <p className="max-w-3xl mx-auto text-sm sm:text-base ">
-          We serve our customers with the highest business standards and ensure
-          you receive premium quality, transparency, and reliable after-sales
-          service.
-        </p>
-      </motion.section>
+        {/* Services Grid */}
+        <section className="max-w-7xl mx-auto px-4 pb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 text-left"
+              >
+                <h3 className="text-xl font-semibold text-sky-700 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Closing Note */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className=" text-neutral-800 text-center py-10 px-4"
+        >
+          <h3 className="text-2xl font-semibold mb-3">Customer Satisfaction First</h3>
+          <p className="max-w-3xl mx-auto text-sm sm:text-base ">
+            We serve our customers with the highest business standards and ensure
+            you receive premium quality, transparency, and reliable after-sales
+            service.
+          </p>
+        </motion.section>
+
+      </Container>
+
     </div>
   );
 }

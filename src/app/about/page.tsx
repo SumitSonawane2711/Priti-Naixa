@@ -4,11 +4,22 @@ import { Heading } from "../components/heading";
 import { SubHeading } from "../components/subheading";
 import { Timeline } from "../components/timeline";
 import { SectionHeading } from "../components/section-heading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Priti Naixa Pvt. Ltd.",
+  description:
+    "Learn about Priti Naixa Pvt. Ltd., a trusted T-permit vehicle dealership specializing in new and used car sales, RTO services, and finance solutions.",
+  alternates : {
+    canonical: "https://pritinaixa.com/about",
+    
+  }  
+}
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex items-start justify-start">
-      <Container className="min-h-screen p-4 md:pt-20 md:pb-10">
+    <main className=" flex items-start justify-start">
+      <Container className="p-4 md:pt-20 md:pb-10 max-w-7xl flex-col items-center justify-center">
 
         {/* Main Heading */}
         <Heading>Hello, We are PritiNaixa Pvt. Ltd.</Heading>
@@ -55,7 +66,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           <div className=" border rounded-xl p-6 shadow-md bg-gradient-to-b from-gray-800  to-sky-800">
             <SectionHeading className="text-white">Our Mission</SectionHeading>
-            <SubHeading  className="text-gray-200">
+            <SubHeading className="text-gray-200">
               To cover the maximum geographical areas in Mumbai and Maharashtra in
               the T-permit passenger vehicle business segment.
             </SubHeading>
@@ -89,9 +100,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="bg-white border rounded-xl shadow-md p-6 flex flex-col items-center">
               <Image
-                src="/images/priti.jpg"
+                src="/priti-naixa.jpeg"
                 alt="Mrs. Priti - CEO & MD"
-                className="w-28 h-28 rounded-full object-cover shadow-md mb-4"
+                className="w-58 h-68  rounded-lg object-cover shadow-md mb-4"
                 width={112}
                 height={112}
               />
@@ -104,7 +115,7 @@ export default function AboutPage() {
                 alt="Mr. Yogendra Singh - MD"
                 width={112}
                 height={112}
-                className="w-28 h-28 rounded-full object-cover shadow-md mb-4"
+                className="w-58 h-68  rounded-lg object-cover shadow-md mb-4"
               />
               <h4 className="font-semibold text-gray-800">Mr. Yogendra Singh</h4>
               <p className="text-sm text-gray-500">Managing Director</p>

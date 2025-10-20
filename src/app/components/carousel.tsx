@@ -5,7 +5,6 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { Heading } from "./heading";
 import { SubHeading } from "./subheading";
-import Head from "next/head";
 import Image from "next/image";
 
 interface Slide {
@@ -64,8 +63,7 @@ const Carousel: React.FC<CarouselProps> = ({
       x: 0,
       opacity: 1,
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.3 },
+        opacity: { duration: 0.1 },
       },
     },
     exit: (direction: number) => ({
@@ -93,9 +91,9 @@ const Carousel: React.FC<CarouselProps> = ({
   return (
 
     <>
-      <div className="relative w-full h-[80vh] md:h-[90vh] max-w-screen overflow-hidden border-b-2 border-gray-500">
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+      <div className="relative bg-gray-900 w-full h-[80vh] md:h-[90vh] max-w-screen overflow-hidden border-b-2 border-gray-500">
 
+        <AnimatePresence initial={true} custom={direction} mode="popLayout">
           <motion.div
             key={currentIndex}
             custom={direction}

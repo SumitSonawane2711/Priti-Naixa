@@ -14,6 +14,7 @@ import Accordion from "./components/accordians";
 import { IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Head from "next/head";
+import Script from "next/script";
 
 
 export default function Home() {
@@ -23,24 +24,29 @@ export default function Home() {
   const faqs = [
     {
       id: 1,
-      question: "What are the benefits of owning a JK Tyre franchise?",
+      question: "Do you offer car exchange services?",
       answer:
-        "Owning a JK Tyre franchise allows you to sell a trusted brand’s products, access marketing support, and earn consistent revenue through vehicle maintenance and tyre replacement services.",
+        "Yes, we offer car exchange services only for T-permit where you can exchange your old car for a new or pre-owned vehicle of your choice. Our experts provide a fair valuation of your existing car."
     },
     {
       id: 2,
-      question: "How much investment is required to start a tyre franchise?",
+      question: "How do I sell my car to Priti Naixa Pvt. Ltd.?",
       answer:
-        "The investment varies depending on location and setup size, typically ranging from ₹10–25 lakhs including equipment and branding.",
+        "1. Contact us or visit our showroom for car inspection.Get a free valuation based on market price and car condition.Complete documentation and receive instant payment."
     },
     {
       id: 3,
-      question: "Do I get exclusive area rights with my dealership?",
+      question: "Can I buy a car on finance through Priti Naixa Pvt. Ltd.?",
       answer:
-        "Yes, most JK Tyre franchise partners are given exclusive area rights to ensure fair competition and sustainable business growth.",
+        "Yes. We have tie-ups with leading financial institutions and banks to offer easy car loan options with minimal documentation and quick approval."
     },
+    {
+      id: 4,
+      question: "Do you provide warranty or after-sales service for used cars?",
+      answer:
+        "Yes, selected vehicles come with limited warranty and service support. Warranty coverage depends on the car’s model, age, and condition."
+    }
   ];
-
 
   const NewModelTab = [
     "Maruti Suzuki", "Hyundai"
@@ -117,6 +123,36 @@ export default function Home() {
 
   return (
     <>
+      <Script
+        id="ld-json"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AutoDealer",
+            name: "Priti Naixa Private Limited T-Permit Vehicle Showroom",
+            image: "https://pritinaixa.com/logo.png",
+            "@id": "",
+            url: "https://pritinaixa.com",
+            telephone: "+91-9136771018",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Shop 1 & 2, Tarique Galaxy, Plot-181,",
+              addressLocality: "Sector-2, Taloja, Panvel, Raigarh,(MH),",
+              addressRegion: "Maharashtra",
+              postalCode: "410208",
+              addressCountry: "IN",
+            },
+            
+            sameAs: [
+              "https://www.facebook.com/share/1A693CpYnj/?mibextid=wwXIfr",
+              "https://www.instagram.com/priti_naixa_?igsh=MWt5ZnM4ZjhiZ3VsNQ%3D%3D&utm_source=qr",
+              "https://youtube.com/@pritinaixa2018?si=dzisIPRvF_0pkC7Y",
+            ],
+          }),
+        }}
+      />
+
       <Head>
         {slides.map((slide, i) => (
           <link
