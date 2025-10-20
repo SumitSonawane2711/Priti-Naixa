@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     default: "Priti Naixa  | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
     template: "%s | Priti Naixa",
   },
+   icons: {
+    icon: "/vercel.svg", 
+  },
   description:
     "Priti Naixa provides trusted T-Permit vehicle services, RTO registration, finance assistance, and & Car sale purchase and exchange.",
   keywords: [
