@@ -16,34 +16,69 @@ const Contact = () => {
         <div className=" sm:flex justify-between items-center py-6 sm:py-0 ">
           <Heading> Contact US</Heading>
           {/* Info Cards */}
-          <div className=" flex flex-col md:flex-row gap-4 mt-4 sm:mt-0">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-2 p-4  shadow-md cursor-pointer hover:shadow-md bg-yellow-400"
+          <div className=" flex flex-col  md:flex-row gap-4 mt-4 sm:mt-0">
+            <div
+              className="flex items-center p-4 shadow-md cursor-pointer hover:shadow-md bg-yellow-400"
             >
-              <IconPhone className="text-indigo-600" size={24} />
-              <div>
-                <p className="text-sm text-gray-500">Phone</p>
-                <p className="font-semibold text-gray-800">+91 91367 71018</p>
+              <IconPhone className="text-indigo-500 " size={24} />
+              <div className="flex flex-wrap gap-4  font-semibold text-gray-800">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-2 transition-colors  duration-100 "
+                  href="tel:+919136771018"
+                >
+                  +91 9136771018
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-2 transition-colors"
+                  href="tel:+919594111018"
+                >
+                  +91 9594111018
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-2 transition-colors"
+                  href="tel:+917208711018"
+                >
+                  +91 7208711018
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-2 transition-colors"
+                  href="tel:+917208523018"
+                >
+                  +91 7208523018
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-2 transition-colors"
+                  href="tel:+919136544018"
+                >
+                  +91 9136544018
+                </motion.a>
               </div>
-            </motion.div>
+            </div>
+
             {/* Vertical line */}
-            <div className="border-l border-gray-300"></div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
+            <div className="border-t sm:border-l border-gray-300"></div>
+
+            <div
               className="flex items-center gap-2 p-4 shadow-md cursor-pointer hover:shadow-md bg-yellow-400"
             >
-              <IconMail className="text-indigo-600" size={24} />
-              <div>
-                <p className="text-sm text-gray-500">Email</p>
-                <p className="font-semibold text-gray-800">pritinaixa68@gmail.com</p>
-              </div>
-            </motion.div>
+              <IconMail className="text-indigo-500" size={24} />
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 transition-colors font-semibold text-gray-800"
+                href="mailto:pritinaixa68@gmail.com"
+              > pritinaixa68@gmail.com
+              </motion.a>
+            </div>
           </div>
         </div>
 
 
-        <section className="w-full mt-12 py-10 bg-white border border-gray-200 rounded-xl pending-4 shadow-lg ">
+        <section className="w-full mt-4 sm:mt-12 py-10 bg-white border border-gray-200 rounded-xl pending-4 shadow-lg ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
 
             {/* Left Side - Contact Form + Info */}
@@ -58,7 +93,7 @@ const Contact = () => {
               </SubHeading>
 
               {/* Contact Form */}
-              <ContactForm/>
+              <ContactForm />
             </motion.div>
 
             {/* Right Side - Google Map */}
