@@ -56,7 +56,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="overflow-hidden bg-blue-50 border-t border-blue-100"
               >
-                <p className="px-6 py-4 text-gray-700 text-sm sm:text-base">
+                <p className="px-6 py-4 text-gray-700 text-sm sm:text-base whitespace-pre-line">
                   {item.answer}
                 </p>
               </motion.div>
