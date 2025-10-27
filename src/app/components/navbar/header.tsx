@@ -29,6 +29,9 @@ export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const handleLinkClick = () => {
+    setMobileOpen(false); 
+  };
 
   // Scroll shadow effect
   useEffect(() => {
@@ -156,14 +159,11 @@ export const Header = () => {
                   >
                     <Link
                       href={item.href || "#"}
+                      onClick={handleLinkClick}
                     >
                       {item.title}
                     </Link>
-
-                  
                   </div>
-
-                  
                 </div>
               ))}
             </div>
