@@ -31,8 +31,7 @@ export default function Home() {
     {
       id: 2,
       question: "How do I sell my car to Priti Naixa Pvt. Ltd.?",
-      answer:
-        "1. Contact us or visit our showroom for car inspection.Get a free valuation based on market price and car condition.Complete documentation and receive instant payment."
+      answer:"You can sell your car in three simple steps: \n 1.Contact us or visit our showroom for car inspection \n 2.Get a free valuation based on market price and car condition. \n 3.Complete documentation and receive instant payment. \n 4.If you are running any loan for your particular vehicle then as Priti Naixa will close the loan 1st as per foreclosure amount and rest amount instantly transfer to your account. We will keep a small amount for Loan NOC and RTO/Insurance transfer purposes only."
     },
     {
       id: 3,
@@ -45,6 +44,12 @@ export default function Home() {
       question: "Do you provide warranty or after-sales service for used cars?",
       answer:
         "Yes, selected vehicles come with limited warranty and service support. Warranty coverage depends on the car’s model, age, and condition."
+    },
+    {
+      id: 5,
+      question: "What documents are required to buy or sell a car?",
+      answer:
+      "For Selling a Car: \n -RC Book \n -Car documents (Permit & Authorization) \n -Insurance Copy \n -Pollution Certificate \n -ID & Address Proof \n -PAN Card \n -Bank Details for Payment \n\n For Buying a Car: \n -ID & Address Proof \n -PAN Card \n -Income Proof (if financing) \n -Latest 6 month bank Statement (Cheque leaf)"
     }
   ];
 

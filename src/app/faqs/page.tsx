@@ -24,7 +24,7 @@ const faqs = [
     id: 3,
     question: "Where is Priti Naixa Pvt. Ltd. located?",
     answer:
-    "We are located in Navi Mumbai, Mumbra Shilphata Branch_2:Thane",
+    "Taloja Branch_1: Reg. Office: Priti Naixa Pvt Ltd. Shop 1,2,3,4,5,&6, Tarique Galaxy, Plot No. 181, Sector-02, Taloja Phase-1, Next to Petali Metro Station, Navi Mumbai - 410208. \nMumbra Shilphata Branch_2: Priti Naixa Pvt Ltd. Shop No. 5 / 6 Abu Bakar Empire, Survey No. 97, Shil Mahape Road, Opp. AK Compound, Shilphata, Thane - 400612.",
   },
 
   // 🛠️ Priti Naixa Services
@@ -197,10 +197,35 @@ const faqs = [
     id:36,
     question:"What happens if extra work is required after inspection?",
     answer:"They should call you and get your approval before carrying out extra work beyond the initial estimate. Confirm how they handle emergent issues and cost escalation."
+  },
+  {
+    id:37,
+    question:"How do I book a service and how long will it take?",
+    answer:"Booking: By phone/WhatsApp, or walk-in (depending on availability). \nTypical timings: \n-Car wash: maybe 30–60 minutes (depending on condition & size) \n -Routine mechanical maintenance: few hours (2–4 hrs) or maybe next day. \n -Major repairs: may take a day or more. \n\n Ask about their working hours (start & end) and whether weekend/holiday slots exist."
+  },
+  {
+    id:38,
+    question:"What is the pricing structure?",
+    answer:"Car wash: fixed rate depending on size (hatch / sedan / SUV) + any extras (interior cleaning, engine bay flush). \nMechanical work: Estimate given after inspection. Rates for labour + parts will vary. \nAsk for a written estimate before work begins. Clarify terms for additional work discovered later."
+  },
+  {
+    id:39,
+    question:"What about spare parts, materials and warranty on work?",
+    answer:"For mechanical: They should offer genuine/OEM or good quality aftermarket parts. Ask if you can inspect the old parts replaced. \nWarranty: They should offer some period for labour (e.g., 30 days) and for parts (per manufacturer or supplier). It depends on the particular parts. \nFor car wash: They may offer a guarantee if you’re dissatisfied (e.g., spots missed, quality). Ask their policy."
+  },
+  {
+    id:40,
+    question:"What payment methods are accepted / advance required?",
+    answer:"Payment options: \n -Payment via cash / UPI / card. \n -Possibly a small deposit if ordering major repair/parts.\n -Ask if there are discounts or service packages."
+  },
+  {
+    id:41,
+    question:"Post-service care / what do I receive after servicing?",
+    answer:"We are facilitate: \n -Receipt/invoice showing parts replaced, labour done. \n -Service record sheet if they maintain it. \n -Possibly old parts to show what was replaced (if mechanical). \n -For wash: Job card showing services done."
   }
-
-
 ];
+
+
 
 export default function FAQPage() {
   return (
