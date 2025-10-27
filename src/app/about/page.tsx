@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   title: "About Us | Priti Naixa Pvt. Ltd.",
   description:
     "Learn about Priti Naixa Pvt. Ltd., a trusted T-permit vehicle dealership specializing in new and used car sales, RTO services, and finance solutions.",
-  alternates : {
+  alternates: {
     canonical: "https://pritinaixa.com/about",
-    
-  }  
+
+  }
 }
 
 export default function AboutPage() {
@@ -111,7 +111,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-white border rounded-xl shadow-md p-6 flex flex-col items-center">
               <Image
-                src="/images/yogendra.jpg"
+                src="/yogendra-singh.png"
                 alt="Mr. Yogendra Singh - MD"
                 width={112}
                 height={112}
@@ -119,6 +119,40 @@ export default function AboutPage() {
               />
               <h4 className="font-semibold text-gray-800">Mr. Yogendra Singh</h4>
               <p className="text-sm text-gray-500">Managing Director</p>
+            </div>
+            <div className="bg-white border rounded-xl shadow-md p-6 flex flex-col items-center">
+              <Image
+                src="/sanjaykumar-pal.jpeg"
+                alt="Mr. Sanjaykumar Pal - Operations Head - HR & Admin"
+                width={112}
+                height={112}
+                className="w-58 h-68  rounded-lg object-cover shadow-md mb-4"
+              />
+              <h4 className="font-semibold text-gray-800">Mr. Sanjaykumar Pal </h4>
+              <p className="text-sm text-gray-500">Operations Head - HR & Admin</p>
+            </div>
+
+            <div className="bg-white border rounded-xl shadow-md p-6 flex flex-col items-center">
+              <Image
+                src="/kanhaiyalal.png"
+                alt="Mr. Kanhaiyalal - Procurement Manager"
+                width={112}
+                height={112}
+                className="w-58 h-68  rounded-lg object-cover shadow-md mb-4"
+              />
+              <h4 className="font-semibold text-gray-800">Mr. Kanhaiyalal</h4>
+              <p className="text-sm text-gray-500">Procurement Manager</p>
+            </div>
+            <div className="bg-white border rounded-xl shadow-md p-6 flex flex-col items-center">
+              <Image
+                src="/pravin-kumar.png"
+                alt="Mr. Praveen Kumar - Sales Head & Branch Manager"
+                width={112}
+                height={112}
+                className="w-58 h-68  rounded-lg object-cover shadow-md mb-4"
+              />
+              <h4 className="font-semibold text-gray-800">Mr. Praveen Kumar</h4>
+              <p className="text-sm text-gray-500">Sales Head & Branch Manager</p>
             </div>
           </div>
         </div>
