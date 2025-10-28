@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "../components/container";
+import SEO from "../components/seo";
 
 
 
@@ -46,94 +47,104 @@ export default function ServiceDetailPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/service-banner.png"
-          alt="Services Banner"
-          fill
-          className="object-cover brightness-50 bg-slate-700"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10 text-center px-4"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold text-white drop-shadow-lg">
-            Detailed Services & Post-Sale Support
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-100 mt-4 max-w-2xl mx-auto">
-            From financing to post-purchase maintenance — we cover every step of
-            your car journey with complete support.
-          </p>
-        </motion.div>
-      </section>
+    <>
+      <SEO
+        title="Our Services | T-Permit, Vehicle Registration & Showroom Support"
+        description="Explore our professional services including T-Permit processing, vehicle registration, loan assistance, insurance, and car showroom sales & purchase — all under one roof."
+        keywords="T-permit services, T-permit vehicle registration, T-permit showroom support, car insurance, vehicle finance, transport permit"
+        url="https://pritinaixa.com/services"
+        image="/banner1.png"
+      />
 
-      <Container className="max-w-7xl flex-col items-center justify-center">
-
-        {/* Marketing Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-6xl mx-auto px-4 py-12 text-center"
-        >
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            What Services Do We Provide Apart from Car Sales?
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            We’re not just about selling cars — we ensure a seamless experience
-            from the moment you step in until long after your purchase. With
-            financing, insurance, servicing, and buyback options, we’ve got your
-            automotive needs covered.
-          </p>
-        </motion.section>
-
-        {/* Services Grid */}
-        <section className="max-w-7xl mx-auto px-4 pb-16">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                whileHover={{ scale: 1.03 }}
-                className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 text-left"
-              >
-                <h3 className="text-xl font-semibold text-sky-700 mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+      <div className="min-h-screen bg-gray-50">
+        {/* Hero Section */}
+        <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
+          <Image
+            src="/service-banner.png"
+            alt="Services Banner"
+            fill
+            className="object-cover brightness-50 bg-slate-700"
+          />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="relative z-10 text-center px-4"
+          >
+            <h1 className="text-4xl sm:text-5xl font-bold text-white drop-shadow-lg">
+              Detailed Services & Post-Sale Support
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-100 mt-4 max-w-2xl mx-auto">
+              From financing to post-purchase maintenance — we cover every step of
+              your car journey with complete support.
+            </p>
+          </motion.div>
         </section>
 
-        {/* Closing Note */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className=" text-neutral-800 text-center py-10 px-4"
-        >
-          <h3 className="text-2xl font-semibold mb-3">Customer Satisfaction First</h3>
-          <p className="max-w-3xl mx-auto text-sm sm:text-base ">
-            We serve our customers with the highest business standards and ensure
-            you receive premium quality, transparency, and reliable after-sales
-            service.
-          </p>
-        </motion.section>
+        <Container className="max-w-7xl flex-col items-center justify-center">
 
-      </Container>
+          {/* Marketing Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-6xl mx-auto px-4 py-12 text-center"
+          >
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+              What Services Do We Provide Apart from Car Sales?
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              We’re not just about selling cars — we ensure a seamless experience
+              from the moment you step in until long after your purchase. With
+              financing, insurance, servicing, and buyback options, we’ve got your
+              automotive needs covered.
+            </p>
+          </motion.section>
 
-    </div>
+          {/* Services Grid */}
+          <section className="max-w-7xl mx-auto px-4 pb-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 text-left"
+                >
+                  <h3 className="text-xl font-semibold text-sky-700 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+          {/* Closing Note */}
+          <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className=" text-neutral-800 text-center py-10 px-4"
+          >
+            <h3 className="text-2xl font-semibold mb-3">Customer Satisfaction First</h3>
+            <p className="max-w-3xl mx-auto text-sm sm:text-base ">
+              We serve our customers with the highest business standards and ensure
+              you receive premium quality, transparency, and reliable after-sales
+              service.
+            </p>
+          </motion.section>
+
+        </Container>
+
+      </div>
+    </>
   );
 }

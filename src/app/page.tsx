@@ -14,7 +14,7 @@ import Accordion from "./components/accordians";
 import { IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Head from "next/head";
-import Script from "next/script";
+import SEO from "./components/seo";
 
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
     {
       id: 2,
       question: "How do I sell my car to Priti Naixa Pvt. Ltd.?",
-      answer:"You can sell your car in three simple steps: \n 1.Contact us or visit our showroom for car inspection \n 2.Get a free valuation based on market price and car condition. \n 3.Complete documentation and receive instant payment. \n 4.If you are running any loan for your particular vehicle then as Priti Naixa will close the loan 1st as per foreclosure amount and rest amount instantly transfer to your account. We will keep a small amount for Loan NOC and RTO/Insurance transfer purposes only."
+      answer: "You can sell your car in three simple steps: \n 1.Contact us or visit our showroom for car inspection \n 2.Get a free valuation based on market price and car condition. \n 3.Complete documentation and receive instant payment. \n 4.If you are running any loan for your particular vehicle then as Priti Naixa will close the loan 1st as per foreclosure amount and rest amount instantly transfer to your account. We will keep a small amount for Loan NOC and RTO/Insurance transfer purposes only."
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ export default function Home() {
       id: 5,
       question: "What documents are required to buy or sell a car?",
       answer:
-      "For Selling a Car: \n -RC Book \n -Car documents (Permit & Authorization) \n -Insurance Copy \n -Pollution Certificate \n -ID & Address Proof \n -PAN Card \n -Bank Details for Payment \n\n For Buying a Car: \n -ID & Address Proof \n -PAN Card \n -Income Proof (if financing) \n -Latest 6 month bank Statement (Cheque leaf)"
+        "For Selling a Car: \n -RC Book \n -Car documents (Permit & Authorization) \n -Insurance Copy \n -Pollution Certificate \n -ID & Address Proof \n -PAN Card \n -Bank Details for Payment \n\n For Buying a Car: \n -ID & Address Proof \n -PAN Card \n -Income Proof (if financing) \n -Latest 6 month bank Statement (Cheque leaf)"
     }
   ];
 
@@ -128,34 +128,12 @@ export default function Home() {
 
   return (
     <>
-      <Script
-        id="ld-json"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "AutoDealer",
-            name: "Priti Naixa Private Limited T-Permit Vehicle Showroom",
-            image: "https://pritinaixa.com/logo.png",
-            "@id": "",
-            url: "https://pritinaixa.com",
-            telephone: "+91-9136771018",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Shop 1 & 2, Tarique Galaxy, Plot-181,",
-              addressLocality: "Sector-2, Taloja, Panvel, Raigarh,(MH),",
-              addressRegion: "Maharashtra",
-              postalCode: "410208",
-              addressCountry: "IN",
-            },
-            
-            sameAs: [
-              "https://www.facebook.com/share/1A693CpYnj/?mibextid=wwXIfr",
-              "https://www.instagram.com/priti_naixa_?igsh=MWt5ZnM4ZjhiZ3VsNQ%3D%3D&utm_source=qr",
-              "https://youtube.com/@pritinaixa2018?si=dzisIPRvF_0pkC7Y",
-            ],
-          }),
-        }}
+      <SEO
+        title="Priti-Naixa T-Permit Vehicle Services & Showroom | Maharashtra | India"
+        description="Your one-stop destination for T-Permit vehicles, car showroom sales-purchase, and registration assistance. Trusted across Maharashtra for commercial vehicle services."
+        keywords="Priti-Naixa, T-permit cars in Mumbai, T-permit cars in maharashtra, T-permit cars, T-permit New car, T-permit Used car, T-permit car showroom, T-permit car sales and purchase"
+        url="https://pritinaixa.com"
+        image="/banner1.png"
       />
 
       <Head>

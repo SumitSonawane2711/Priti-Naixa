@@ -17,27 +17,31 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Priti Naixa  | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
+    default: "Priti Naixa Pvt. Ltd. | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
     template: "%s | Priti Naixa",
   },
    icons: {
-    icon: "/vercel.svg", 
+    icon: "/favicon.png", 
   },
   description:
     "Priti Naixa provides trusted T-Permit vehicle services, RTO registration, finance assistance, and & Car sale purchase and exchange.",
   keywords: [
+    "Priti Naixa",
+    "T-permit cars in mumbai",
+    "T-permit cars in maharashtra",
     "T-permit vehicles",
-    "commercial vehicle showroom",
-    "vehicle registration",
-    "RTO services",
-    "taxi permit",
+    "T-permit cars",
+    "T-permit new car",
+    "T-permit used car",
+    "T-permit car showroom",
+    "T-permit car sales and purchase",
+    "T-permit RTO services",
     "car loan assistance",
-    "Priti-Naixa",
     "Car Sale Purchase"
   ],
   metadataBase: new URL("https://pritinaixa.com"), 
   openGraph: {
-    title: "Priti Naixa  | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
+    title: "Priti Naixa Pvt. Ltd. | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
     description:
       "Your one-stop solution for commercial vehicle sales, purchase, registration, and permits.",
     url: "https://pritinaixa.com",
@@ -55,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Priti Naixa | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
+    title: "Priti Naixa Pvt. Ltd. | T-Permit Vehicle & Car Sale Purchase and Exchange Services",
     description:
-      "T-Permit vehicle showroom offering sales, RTO, purchase, registration, and finance services.",
+      "Priti Naixa Pvt. Ltd. T-Permit vehicle showroom offering sales, RTO, purchase, registration, and finance services.",
     images: ["https://pritinaixa.com/og-banner.png"],
   },
   robots: {

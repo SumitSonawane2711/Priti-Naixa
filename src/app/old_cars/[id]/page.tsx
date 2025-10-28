@@ -6,6 +6,7 @@ import SectionCarousel from "@/app/components/section_carousel";
 import { SectionHeading } from "@/app/components/section-heading";
 import { SubHeading } from "@/app/components/subheading";
 import ProductCarousel from "@/app/components/product_carousel";
+import SEO from "@/app/components/seo";
 
 export async function generateStaticParams() {
 
@@ -37,6 +38,14 @@ const CarDetailPage = ({params} : {params: {id:string}}) => {
   }
 
   return (
+    <>
+    <SEO
+            title={`${car.name} | Price & Details | Priti-Naixa Showroom`}
+            description={car.description}
+            keywords={`${car.name}, T-permit cars, buy ${car.name}, T-permit vehicle showroom, used T-permit cars Priti-Naixa`}
+            url={`https://pritinaixa.com/old_cars/${car.id}`}
+            image={car.images[0]}
+          />
     <div
       
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
@@ -198,6 +207,8 @@ const CarDetailPage = ({params} : {params: {id:string}}) => {
       </section>
       
     </div>
+    </>
+
   );
 };
 
