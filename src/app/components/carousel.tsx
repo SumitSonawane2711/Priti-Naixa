@@ -6,6 +6,7 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { Heading } from "./heading";
 import { SubHeading } from "./subheading";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Slide {
   title: string;
@@ -113,7 +114,7 @@ const Carousel: React.FC<CarouselProps> = ({
               src={currentSlide.imageUrl}
               fill
               alt="Banner"
-              priority
+              priority={currentIndex === 0}
               quality={90}
               style={{ objectFit: "cover" }}
 
@@ -133,12 +134,12 @@ const Carousel: React.FC<CarouselProps> = ({
                 <SubHeading className="text-sm md:text-xl lg:text-xl mb-4 md:mb-8 font-light text-gray-200 leading-relaxed">
                   {currentSlide.description}
                 </SubHeading>
-                <a
+                <Link
                   href={currentSlide.buttonLink}
                   className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-bold text-sm md:text-lg py-2 px-4 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-95"
                 >
                   {currentSlide.buttonText}
-                </a>
+                </Link>
               </motion.div>
             </AnimatePresence>
 
@@ -148,7 +149,7 @@ const Carousel: React.FC<CarouselProps> = ({
                 src={currentSlide.imageUrl}
                 alt="Banner"
                 fill
-                priority
+                priority={currentIndex === 0}
                 quality={90}
                 style={{ objectFit: "cover" }}
                 className="scale-120 object-cover transition-transform duration-700"
