@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { motion } from 'motion/react'
+import Image from "next/image";
 
 interface Card {
   id: string;
@@ -63,7 +65,7 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
   }, []);
 
   // ✅ Infinite loop navigation
-  const nextSlide = useCallback(()=>{
+  const nextSlide = useCallback(() => {
     const maxIndex = cards.length - Math.floor(visibleSlides);
 
     // Move to next slide only if not at the last valid position
@@ -72,7 +74,7 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
     } else {
       setCurrentIndex(0); // Optional: loop back to start
     }
-  },[cards.length, visibleSlides,currentIndex]) 
+  }, [cards.length, visibleSlides, currentIndex])
 
   const prevSlide = () => {
     if (currentIndex > 0) {
@@ -135,19 +137,35 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
             transform: `translateX(${getTranslateX()})`,
           }}
         >
-          {cards.map((card) => (
-            <div
+          {cards.map((card, idx) => (
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', x: 50 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
+              transition={{
+                duration: 0.3,
+                delay: idx * 0.1,
+                ease: 'easeInOut'
+              }}
+              viewport={{ once: true }}
               key={card.id}
               className="flex-shrink-0 px-2"
               style={{ width: `${100 / visibleSlides}%` }}
             >
               <div className="w-full bg-gray-50 border border-gray-300 rounded-lg overflow-hidden transform transition-all duration-300 relative group">
                 {/* Image */}
-                <div
+                <Image
+                  src={card.imageUrl}
+                  alt={card.altText || card.title}
+                  width={400}
+                  height={250}
+                  loading="lazy"
+                  className="w-full h-48 sm:h-56 object-cover bg-center"
+                />
+                {/* <div
                   className="h-48 sm:h-56 bg-cover bg-center"
                   style={{ backgroundImage: `url(${card.imageUrl})` }}
                 >
-                </div>
+                </div> */}
 
                 {/* Content */}
                 <div className="px-2 py-4 flex flex-col h-35 justify-between">
@@ -165,7 +183,7 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
                   >See Details</Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -180,7 +198,7 @@ const SectionCarousel: React.FC<SectionCarouselProps> = ({
               className="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer border-2 border-gray-400 bg-white/70 hover:bg-white shadow-lg text-gray-600 hover:text-blue-600 p-2 rounded-full transition-all z-10"
               aria-label="Previous"
             >
-              <IconChevronLeft/>
+              <IconChevronLeft />
             </button>
           )}
 

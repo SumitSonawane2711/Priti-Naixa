@@ -24,18 +24,25 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 px-4 sm:px-0">
       {items.map((item, index) => (
-        <div
+        <motion.div
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 50 }}
+          whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+          transition={{
+            duration: 0.3,
+            delay: index * 0.1,
+            ease: 'easeInOut'
+          }}
+          viewport={{ once: true }} 
           key={item.id}
           className="border border-blue-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
         >
           {/* Header */}
           <button
             onClick={() => toggleAccordion(index)}
-            className={`w-full flex justify-between items-center px-6 py-4 text-left transition-colors duration-300 ${
-              activeIndex === index
+            className={`w-full flex justify-between items-center px-6 py-4 text-left transition-colors duration-300 ${activeIndex === index
                 ? "bg-accent text-slate-800"
                 : "bg-white hover:bg-accent text-gray-800"
-            }`}
+              }`}
           >
             <span className="font-semibold text-base sm:text-lg">{item.question}</span>
             <motion.div
@@ -62,7 +69,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

@@ -15,6 +15,7 @@ import { IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Head from "next/head";
 import SEO from "./components/seo";
+import tyre_banner from "../../public/jktyres_banner.webp";
 
 
 export default function Home() {
@@ -137,15 +138,12 @@ export default function Home() {
       />
 
       <Head>
-        {slides.map((slide, i) => (
-          <link
-            key={i}
-            rel="preload"
-            as="image"
-            href={slide.imageUrl}
-            fetchPriority="high"
-          />
-        ))}
+        <link
+          rel="preload"
+          as="image"
+          href={slides[0].imageUrl}
+          fetchPriority="high"
+        />
       </Head>
       <main>
 
@@ -242,9 +240,11 @@ export default function Home() {
                 <Image
                   width={500}
                   height={600}
-                  src="https://imgs.search.brave.com/DpNP5A-WyKan_eoEhe9ZcOHVpq_jnDw2LfsaLvzGwAM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9qa3R5/cmUtbWVkaWEtMS5z/My5hcC1zb3V0aC0x/LmFtYXpvbmF3cy5j/b20vSktfU21hcnRf/dHlyZV8yX1gxX0NU/Q18wMV9iZDg5NDRk/ZTU3LmpwZz9mb3Jt/YXQ9YXV0byZ3aWR0/aD02NDAmcXVhbGl0/eT03NQ" // replace with actual image path
+                  src={tyre_banner}
                   alt="JK Tyre Franchise"
-                  className="w-full  md:rounded-lg rounded-t-lg"
+                  loading="lazy"
+                  placeholder="blur"
+                  className="w-full md:rounded-lg rounded-t-lg"
                 />
               </div>
 

@@ -113,8 +113,8 @@ const Carousel: React.FC<CarouselProps> = ({
             <Image
               src={currentSlide.imageUrl}
               fill
-              alt="Banner"
               priority={currentIndex === 0}
+              alt={`Slide ${currentIndex + 1}`}
               quality={90}
               style={{ objectFit: "cover" }}
 
